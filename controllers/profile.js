@@ -1,10 +1,11 @@
 var express = require('express');
+var Redirect = require('../middlewares/redirect');
 
 module.exports = {
   registerRouter() {
     var router = express.Router();
 
-    router.get('/', this.profile);
+    router.get('/', Redirect.ifNotLoggedIn('/'), this.profile);
 
     return router;
   },

@@ -1,4 +1,4 @@
-const helpers = {};
+var helpers = {};
 
 helpers.register = () => {
   return (req, res, next) => {

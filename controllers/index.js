@@ -2,6 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var path = require('path');
 
+var models = require('../models');
 var router = express.Router();
 var basename = path.basename(module.filename);
 
@@ -14,7 +15,10 @@ fs
   });
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+  models.Markers.findAll().then((marker) => {
+    var result = JSON.stringify(marker);
+    res.render('homepage', { result });
+  });
 });
 
 module.exports = router;

@@ -25,11 +25,6 @@ app.use(passport.session());
 app.engine('handlebars', exphbs({
   layoutsDir: './views/layouts',
   defaultLayout: 'main',
-  helpers: {
-    toJSON : function(object) {
-      return JSON.stringify(object);
-    }
-  }
 }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views/`);

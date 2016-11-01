@@ -14,8 +14,6 @@ module.exports = {
       name: req.body.inputName,
       lat: req.body.inputLatitude,
       lng: req.body.inputLongitude
-    }).then(() => {
-      res.redirect('homepage');
     }).catch((err) => {
       console.log(err);
     });

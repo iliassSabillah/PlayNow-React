@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 
 module.exports = (sequelize) => {
-  var User = sequelize.define('sports', {
+  var Sports = sequelize.define('sports', {
     userName: {
       type: Sequelize.INTEGER,
       allowNull: false,

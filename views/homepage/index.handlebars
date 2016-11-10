@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-12">
       {{#if cur_user}}
+<<<<<<< HEAD
         <center><h1>Hey <span style="color: red;">{{cur_user.username}}</span></h1></center> </br></br>
         <div style="float:left; padding-left: 20px; width: 40%; background-color:#D3D3D3">
           <center><h2>Profile Information</h2></center>
@@ -21,15 +22,11 @@
           <center><button type="submit" class="btn btn-primary">Edit sports</button></center>
         </div > 
 
+=======
+        <h1>Welcome back {{cur_user.firstName}}</h1>
+>>>>>>> a0e22f5cb41b22a2db8a1d5dec96f124d3da46d7
       {{else}}
-        <div>
-          <center><h1>Welcome</h1></center>
-        </div> </br></br></br>
-        
-        <center><div style="height: 300px; width: 800px; border:1px solid black;"> 
-         
-        </div></center>
-        
+          <h1>Welcome</h1>
       {{/if}}
     </div>
   </div>

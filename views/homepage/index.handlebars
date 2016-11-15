@@ -4,8 +4,8 @@
 </script>
 <style>
        #map {
-        height: 400px;
-        width: 100%;
+        height: 100%;
+        /*width: 100%;*/
        }
 </style>
 <div class="container">
@@ -15,7 +15,23 @@
       <h1>Hey <span style="color: red;">{{cur_user.username}}</span></h1>
       {{else}}
       <center><h1>Homepage</h1></center>
-      <div id="map"></div>
+      <div class="row" style="height: 400px;">
+        <div id="map" class="col-sm-8"></div>
+        <div class="col-sm-4" style="overflow-y:scroll; height: 100%">
+          <ul class="collection">
+            {{#each marker}}
+              <li class="collection-item avatar">
+                <img src="" alt="" class="circle">
+                <span class="title">{{name}}</span>
+                <p>{{lat}} <br>
+                   {{lng}}
+                </p>
+                <a href="" class="secondary-content"><i class="material-icons">grade</i></a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
       <script>
       var initMap = function() {
 
@@ -48,22 +64,22 @@
           });
         });
 
-        function testing (){
-          var newlat = document.getElementById('inputLatitude').innerHTML;
-          var newlng = document.getElementById('inputLongitude').inneHTML;
-          var newtitle = document.getElementById('inputName').innerHTML;
-          var newposition = new google.maps.LatLng(newlat, newlng);
-          var googleMarker = new google.maps.Marker({
-            position: newposition,
-            title: newtitle,
-            map: map
-          });
-          // Bind a popup to the marker
-          googleMarker.addListener("click", function() {
-            var infoWindow = new google.maps.InfoWindow({content: "<h3>"+marker.name+"</h3>"+"</br>"+"<a href='/'>Homepage link</a>"+"</br>"});
-            infoWindow.open(map, googleMarker);
-          });
-        };
+        // function testing (){
+        //   var newlat = document.getElementById('inputLatitude').innerHTML;
+        //   var newlng = document.getElementById('inputLongitude').inneHTML;
+        //   var newtitle = document.getElementById('inputName').innerHTML;
+        //   var newposition = new google.maps.LatLng(newlat, newlng);
+        //   var googleMarker = new google.maps.Marker({
+        //     position: newposition,
+        //     title: newtitle,
+        //     map: map
+        //   });
+        //   // Bind a popup to the marker
+        //   googleMarker.addListener("click", function() {
+        //     var infoWindow = new google.maps.InfoWindow({content: "<h3>"+marker.name+"</h3>"+"</br>"+"<a href='/'>Homepage link</a>"+"</br>"});
+        //     infoWindow.open(map, googleMarker);
+        //   });
+        // };
       };
       </script>
       <script async defer

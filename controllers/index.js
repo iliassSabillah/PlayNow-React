@@ -17,7 +17,7 @@ fs
 router.get('/', (req, res) => {
   models.Markers.findAll().then((marker) => {
     var result = JSON.stringify(marker);
-    res.render('homepage', { result });
+    res.render('homepage', { marker, result });
   });
 });
 

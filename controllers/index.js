@@ -14,7 +14,8 @@ fs
   });
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+  var result = JSON.stringify(marker);
+  res.render('homepage', {result, marker});
 });
 
 module.exports = router;

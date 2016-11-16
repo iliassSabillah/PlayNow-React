@@ -1,11 +1,101 @@
+<script>
+  //Marker database table json
+  var addMarkers = {{{result}}}
+</script>
+<style>
+       #map {
+        height: 100%;
+        /*width: 100%;*/
+       }
+</style>
+
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col s12">
+
+
       {{#if cur_user}}
-        <h1>Welcome back {{cur_user.firstName}}</h1>
+      <div class="col s12">
+
+        <div id="map" class="col s8"></div>
+
+        <div class="col s4" style="overflow-y:scroll; height: 100%">
+          <ul class="collection">
+            {{#each marker}}
+              <li class="collection-item avatar">
+                <img src="" alt="" class="circle">
+                <span class="title">{{name}}</span>
+                <p>{{lat}} <br>
+                   {{lng}}
+                </p>
+                <a href="" class="secondary-content"><i class="material-icons">grade</i></a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </div>
+
+
+
+
       {{else}}
           <h1>Welcome</h1>
       {{/if}}
     </div>
   </div>
 </div>
+
+<script>
+      var initMap = function() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 40.6, lng: -74},
+          zoom: 10
+        });
+
+        // if brower support available, ask user for location data and set the map view
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map.setCenter(initialLocation);
+          });
+        }
+
+        // for each marker passed through, add it to the map with a popup
+        addMarkers.forEach(function(marker) {
+          console.log(marker.lat);
+          var position = new google.maps.LatLng(marker.lat, marker.lng);
+          var googleMarker = new google.maps.Marker({
+            position: position,
+            title: marker.name,
+            map: map
+          });
+          // Bind a popup to the marker
+          googleMarker.addListener("click", function() {
+            var infoWindow = new google.maps.InfoWindow({content: "<h3>"+marker.name+"</h3>"+"</br>"+"<a href='/'>Homepage link</a>"+"</br>"+"<"});
+            infoWindow.open(map, googleMarker);
+          });
+        });
+
+        // function testing (){
+        //   var newlat = document.getElementById('inputLatitude').innerHTML;
+        //   var newlng = document.getElementById('inputLongitude').inneHTML;
+        //   var newtitle = document.getElementById('inputName').innerHTML;
+        //   var newposition = new google.maps.LatLng(newlat, newlng);
+        //   var googleMarker = new google.maps.Marker({
+        //     position: newposition,
+        //     title: newtitle,
+        //     map: map
+        //   });
+        //   // Bind a popup to the marker
+        //   googleMarker.addListener("click", function() {
+        //     var infoWindow = new google.maps.InfoWindow({content: "<h3>"+marker.name+"</h3>"+"</br>"+"<a href='/'>Homepage link</a>"+"</br>"});
+        //     infoWindow.open(map, googleMarker);
+        //   });
+        // };
+      };
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0cN_4dkCiDcup9Cc6YXIPyANXs9zPic&callback=initMap">
+      </script>

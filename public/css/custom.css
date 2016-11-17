@@ -14,6 +14,12 @@
   font-size: 20px;
  }
 
+ .chewyText{
+  color: #6d6b70; 
+font-family: 'Chewy', cursive;
+font-size: 30px;
+ }
+
  /* label color */
 .input-field label {
 color: #6d6b70; 
@@ -71,18 +77,15 @@ font-size: 30px;
  #changeFont {
     font-family: 'Chewy', cursive;
   }
-
 #headings{
   color: #fe8e60;
   font-family: 'Ubuntu', sans-serif;
 }
-
 #formLabels{
   color: #6d6b70;
   font-family: 'Chewy', cursive;
   font-size: 22px;
 }
-
 #orangeBox{
   background-color: #FFA500;
   opacity: 0.7; 
@@ -90,92 +93,75 @@ font-size: 30px;
   border-radius: 15%;
   position: absolute;
 }
-
 #h4Labels{
   font-family: 'Anonymous Pro', monospace;
   color: #6d6b70;
   text-align: center;
   font-size: 22px;
 }
-
 #submitBtn{
   background-color: #99e265;
   border-color: #99e265;
   margin-left: 200px;
-
 }
-
-
 #cancelBtn{
   background-color: #ff4b40; 
   border-color: #ff4b40;
   display: inline-block;
   margin-left: 50px;
 }
-
 #navbar{
   background-color: #6d6b70;
   height: 55px; 
   opacity: 0.9;
 }
-
 #navbarLinks{
   color: #ffd130;
   font-family: 'Anonymous Pro', monospace;
   font-size: 24px;
 }
-
 /*
 #verticalLine{
 color: #fe8e60;
 height: 5%;
 width: 5%;
 }
-
-
 #headings{
   color: #fe8e60;
   font-family: 'Ubuntu', sans-serif;
 }
-
 #formLabels{
   color: #6d6b70;
   font-family: 'Chewy', cursive;
   font-size: 22px;
 }
-
 #orangeBox{
   background-color: #FFA500;
   opacity: 0.7; 
   padding: 30px;
   border-radius: 15%;
 }
-
 #h4Labels{
   font-family: 'Anonymous Pro', monospace;
   color: #6d6b70;
   text-align: center;
   font-size: 22px;
 }
-
 #submitBtn{
   background-color: #99e265;
   border-color: #99e265;
   margin: auto;
 }
-
 #cancelBtn{
   background-color: #ff4b40; 
   border-color: #ff4b40;
   margin: auto;
 }
-
 #footer{
   background-color: #ffd130;
   text-align: center;
   opacity: 0.7;
 }
-
 #containerAfterNavbar{
   padding-top: 10px;
 }

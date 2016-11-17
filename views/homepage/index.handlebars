@@ -56,7 +56,6 @@
 <!-- Google Map implementation -->
 <script>
     var initMap = function() {
-
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: 40.6,
@@ -64,7 +63,6 @@
             },
             zoom: 10
         });
-
         // if brower support available, ask user for location data and set the map view
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -72,7 +70,6 @@
                 map.setCenter(initialLocation);
             });
         }
-
         // for each marker passed through, add it to the map with a popup
         addMarkers.forEach(function(marker) {
             console.log(marker.lat);

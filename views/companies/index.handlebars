@@ -1,0 +1,40 @@
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>Companies</h1>
+          <hr class="small">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {{#if cur_user}}
+        <div class="create-post">
+          <a class="btn btn-default" href="/companies/new">Create Company</a>
+        </div>
+        {{/if}}
+        {{#each company}}
+          <div class="post-preview">
+              <a href="/companies/{{this.username}}/{{this.slug}}">
+                  <h2 class="post-title">
+                      {{this.companyName}}
+                  </h2>
+              </a>
+              <p class="post-meta">Created by <a href="/users/{{this.username}}">{{this.username}}</a></p>
+          </div>
+          <hr>
+        {{/each}}
+        <ul class="pager">
+          <li class="next">
+            <a href="#">More Companies &rarr;</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+</div>

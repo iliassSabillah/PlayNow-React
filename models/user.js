@@ -42,7 +42,24 @@ module.exports = (sequelize) => {
         notEmpty: true,
       },
     },
-  });
+
+     sportspref: {
+     type: Sequelize.STRING,
+     allowNull: true,
+     validate: {
+       notEmpty: true,
+       isAlphanumeric: true,
+     },
+    },
+   zipcode: {
+     type: Sequelize.STRING,
+     allowNull: false,
+     validate: {
+       notEmpty: true,
+       isAlphanumeric: true,
+     },
+  }
+});
 
   User.beforeCreate((user) =>
     new sequelize.Promise((resolve) => {

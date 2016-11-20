@@ -2,64 +2,46 @@
 
 <div class = "container">
 
-<!-- Enter location -->
-    <form class="col s12 name = "enter-location" action="/enter-location" method="post"">     
-      <div class="row valign-wrapper">
-        <div class="col s8  orange-text text-darken-2">
-          Enter Zip code:
-          <div class="input-field inline">
-            <input id="zipcode" type="text" class="validate">
-            <label for="zipcode" data-error="wrong" data-success="right">Zip code</label>
-          </div>
-        </div>
-      </div>
-    </form>
- <br/> 
-
 <!-- Choose sport -->
 <p class = "orange-text text-darken-2 center-align"> Choose Sport  </p>
 <div>
-<div class="chip">
+<div class="chip" id = "1">
     Tennis
     <i class="close material-icons">close</i>
   </div>
-  <div class="chip">
-    Football
-    <i class="close material-icons">close</i>
-  </div>
-  <div class="chip">
+  <div class="chip" id = "3">
     Basketball
     <i class="close material-icons">close</i>
   </div>
-  <div class="chip">
+  <div class="chip" id = "4">
     Hockey
     <i class="close material-icons">close</i>
   </div>
-   <div class="chip">
+   <div class="chip" id = "5">
     Volleyball
     <i class="close material-icons">close</i>
   </div>
- <div class="chip">
+ <div class="chip" id = "6">
     Ping Pong
     <i class="close material-icons">close</i>
   </div>
- <div class="chip">
+ <div class="chip" id = "7">
     Dodge ball
     <i class="close material-icons">close</i>
   </div>
- <div class="chip">
+ <div class="chip" id = "8">
     Softball
     <i class="close material-icons">close</i>
   </div>
-   <div class="chip">
+   <div class="chip" id = "9">
     Soccer
     <i class="close material-icons">close</i>
   </div>
-   <div class="chip">
+   <div class="chip" id = "10">
     Kickball
     <i class="close material-icons">close</i>
   </div>
-   <div class="chip">
+   <div class="chip" id = "11">
     Baseball
     <i class="close material-icons">close</i>
   </div>
@@ -72,3 +54,12 @@
   </button>
   </div>
 </div>
+
+<script>
+$(".chip").click(function() {
+  $(this).toggleClass('clicked');
+ var sportspref="";
+ sportspref=this.id;
+ console.log("this user's sports preference is " + sportspref);
+});
+</script>

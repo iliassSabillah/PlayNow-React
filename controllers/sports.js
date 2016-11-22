@@ -15,12 +15,11 @@ module.exports = {
    submit(req, res) {
     models.User.update({
       sportspref: req.body.sportspref,
-    }).then((user) => {
-      req.login(user, () =>
-        res.redirect('/')
-      );
-    }).catch(() => {
-      res.render('sports');
+    }, {where: {username:req.params.username} 
+  }).then(() => {
+        res.redirect('/sports')
+    }).catch((err) => {
+       console.log(err);
     });
   },
 };

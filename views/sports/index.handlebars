@@ -49,17 +49,27 @@
 
 <br/>
 <div class="center-align">
-<button class="btn light-green accent-2 white-text text-white" type="submit" name="action">Submit
+<button class="btn light-green accent-2 white-text text-white" id="saveBtn" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
   </div>
 </div>
 
 <script>
+$('#saveBtn').on('click', function() {
+    console.log("whee!");
+    console.log(sportspref);
+  });
+
 $(".chip").click(function() {
   $(this).toggleClass('clicked');
  var sportspref="";
  sportspref=this.id;
+
+$.get( '/save', sportspref, function(data) {
+  console.log("whee!")
+});
+
  console.log("this user's sports preference is " + sportspref);
 });
 </script>

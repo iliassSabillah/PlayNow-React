@@ -1,12 +1,23 @@
 <br/>
 
+<style>
+.clicked {
+  background-color: yellow;
+}
+</style>
+
 <div class = "container">
 
 <!-- Choose sport -->
-<p class = "orange-text text-darken-2 center-align"> Choose Sport  </p>
-<div>
+<form class="col s12" name="sports" action="/sports" method="post">
+  <p class = "orange-text text-darken-2 center-align"> Choose Sport  </p>
+
 <div class="chip" id = "1">
     Tennis
+    <i class="close material-icons">close</i>
+  </div>
+  <div class="chip" id = "2">
+    Crisket
     <i class="close material-icons">close</i>
   </div>
   <div class="chip" id = "3">
@@ -44,32 +55,32 @@
    <div class="chip" id = "11">
     Baseball
     <i class="close material-icons">close</i>
-  </div>
 </div>
 
 <br/>
 <div class="center-align">
-<button class="btn light-green accent-2 white-text text-white" id="saveBtn" type="submit" name="action">Submit
+<button class="btn #8bc34a light-green white-text text-white" type="submit">Submit
     <i class="material-icons right">send</i>
   </button>
   </div>
+  </form>
+  </div>
+
+  <div id = "demo" style="text-align: center;"></div>
 </div>
 
 <script>
-$('#saveBtn').on('click', function() {
-    console.log("whee!");
-    console.log(sportspref);
-  });
 
+var selectedChip;
+
+// change color of selected chips to yellow
 $(".chip").click(function() {
-  $(this).toggleClass('clicked');
- var sportspref="";
- sportspref=this.id;
+$(this).toggleClass('clicked');
 
-$.get( '/save', sportspref, function(data) {
-  console.log("whee!")
+ selectedChip = this.id;
+
+ document.getElementById("demo").innerHTML = selectedChip;
+
 });
 
- console.log("this user's sports preference is " + sportspref);
-});
 </script>

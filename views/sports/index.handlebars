@@ -87,7 +87,7 @@ console.log(selectedChip);
 document.getElementById("selectedChip").value = selectedChip;
 });
 
-$("sportsBtn").click(function(){
+$("#sportsBtn").click(function(){
     $.get('/sports', selectedChip, function(data){
         alert("selected");
     });

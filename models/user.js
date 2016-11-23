@@ -41,7 +41,7 @@ module.exports = (sequelize) => {
       validate: {
         notEmpty: true
       }
-    },
+    }
 /*
      sportspref: {
      type: Sequelize.STRING,
@@ -51,7 +51,7 @@ module.exports = (sequelize) => {
        isAlphanumeric: true
      }
     },
-    */
+    
     
    zipcode: {
      type: Sequelize.STRING,
@@ -61,6 +61,7 @@ module.exports = (sequelize) => {
        isAlphanumeric: true
      }
   }
+  */
 });
 
   User.beforeCreate((user) =>

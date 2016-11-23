@@ -63,7 +63,7 @@
 
 <br/>
 <div class="center-align">
-<button class="btn #8bc34a light-green white-text text-white" type="submit">Submit
+<button class="btn #8bc34a light-green white-text text-white" id = "sportsBtn" type="submit">Submit
     <i class="material-icons right">send</i>
   </button>
   </div>
@@ -85,7 +85,13 @@ $(this).toggleClass('clicked');
 
 console.log(selectedChip);
 document.getElementById("selectedChip").value = selectedChip;
-
 });
+
+$("sportsBtn").click(function(){
+    $.get('/sports', selectedChip, function(data){
+        alert("selected");
+    });
+});
+
 
 </script>

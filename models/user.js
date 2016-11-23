@@ -42,7 +42,7 @@ module.exports = (sequelize) => {
         notEmpty: true
       }
     },
-
+/*
      sportspref: {
      type: Sequelize.STRING,
      allowNull: true,
@@ -51,6 +51,8 @@ module.exports = (sequelize) => {
        isAlphanumeric: true
      }
     },
+    */
+    
    zipcode: {
      type: Sequelize.STRING,
      allowNull: false,

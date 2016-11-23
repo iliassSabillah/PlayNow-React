@@ -38,3 +38,8 @@ models.sequelize.sync().then(() => {
     console.log('App listening on port 3000!' + '\nGo to http://localhost:3000');
   });
 });
+/*
+app.get('/sports', function(req, res){
+ res.send("WHEEE");
+});
+*/

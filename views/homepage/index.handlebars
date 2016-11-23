@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PlayNow</title>
+
+    <link rel="stylesheet" href="/css/custom.css" type="text/css" media="screen,projection"/>
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+</head>
+
+<body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../../js/parallax.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script>
+    //Marker database table json
+    var addMarkers = {{{result}}}
+</script>
+<style>
+    #map {
+        height: 100%;
+        /*width: 100%;*/
+        overflow: visible;
+    }
+</style>
+
+<div class="container">
+<div class="row">
+<div id="content" class="col s12">
+{{#if cur_user}}
+        <h1>Welcome back {{cur_user.firstName}}</h1>
+        <div class="row" style="height: 400px;">
+            <div id="map" class="col m8 s12"></div>
+            <div class="col m4 s12" style="overflow-y:scroll; height: 100%">
+                <ul class="collection">
+                    {{#each marker}}
+                        <li class="collection-item avatar">
+                            <img src="" alt="" class="circle">
+                            <span class="title">{{name}}</span>
+                            <p>{{lat}} <br> {{lng}}
+                            </p>
+                            <a href="" class="secondary-content"><i class="material-icons">grade</i></a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <h2> Add marker to database: </h2>
+        <form name="markers" action="/markers" method="post">
+            <div class="input-field">
+                <label for="inputName">Name</label>
+                <input type="text" id="inputName" name="inputName">
+            </div>
+            <div class="input-field">
+                <label for="inputLatitude">Latitude</label>
+                <input type="text" id="inputLatitude" name="inputLatitude">
+            </div>
+            <div class="input-field">
+                <label for="inputLongitude">Longitude</label>
+                <input type="text" id="inputLongitude" name="inputLongitude">
+            </div>
+            <button type="submit" onClick="testing()" class="btn btn-primary">Add Marker</button>
+        </form>
+
+    </div>
+    </div>
+    </div>
+{{else}}
+    <!--homepage html before login-->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center teal-text text-lighten-2">Welcome</h1>
+                <div class="row center">
+                    <h5 class="header col s12">Playnow. Enjoy your favorite sport. Meet new friends</h5>
+                </div>
+                <div class="row center">
+                    <a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get
+                        Started By Signing Up</a>
+                </div>
+                <br><br>
+
+            </div>
+        </div>
+        <div class="parallax"><img src="http://www.hotmarketdesigns.com/sites/default/files/styles/full_post/public/field/image/uniforms-multi-sports.jpg?itok=jvzWZos9" alt="Unsplashed background img 1"></div>
+    </div>
+
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                        <h5 class="center">Lorem Ipsum is simply</h5>
+
+                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                        <h5 class="center">Lorem ipsum dolor</h5>
+
+                        <p class="light">Lorem ipsum dolor sit amet, vix graece libris theophrastus ex. Brute semper an vim, aperiam aliquando ea sea.
+                            Adhuc apeirian adipiscing id vel.
+                            At labores elaboraret intellegebat qui. Mea hinc choro utroque eu.
+                            Vim enim putent ea, verterem oportere patrioque ius ea.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                        <h5 class="center">Easy to work with</h5>
+
+                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material
+                        Design</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img
+                src="https://secure.static.tumblr.com/b053d3e85382f6c428370cc6aaa6729a/q48is5n/ybJn1wncb/tumblr_static_cricket_sports_1.jpg"
+                alt="Unsplashed background img 2"></div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>Contact Us</h4>
+                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                        scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
+                        fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
+                        ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam
+                        eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi
+                        massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non
+                        tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                        Curae;</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material
+                        Design</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="http://recsports.oregonstate.edu/sites/recsports.oregonstate.edu/files/sport-clubs/photos/img_9228_1.jpg" alt="Unsplashed background img 3">
+        </div>
+    </div>
+
+{{/if}}
+</div>
+</div>
+</div>
+<script>
+    (function ($) {
+        $(function () {
+
+            $('.button-collapse').sideNav();
+            $('.parallax').parallax();
+
+        }); // end of document ready
+    })(jQuery); // end of jQuery name space
+</script>
+<!-- Google Map implementation -->
+<script>
+    var initMap = function () {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 40.6,
+                lng: -74
+            },
+            zoom: 10
+        });
+        // if brower support available, ask user for location data and set the map view
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                map.setCenter(initialLocation);
+            });
+        }
+        // for each marker passed through, add it to the map with a popup
+        addMarkers.forEach(function (marker) {
+            console.log(marker.lat);
+            var position = new google.maps.LatLng(marker.lat, marker.lng);
+            var googleMarker = new google.maps.Marker({
+                position: position,
+                title: marker.name,
+                map: map
+            });
+            // Bind a popup to the marker
+            googleMarker.addListener("click", function () {
+                var infoWindow = new google.maps.InfoWindow({
+                    content: "<h3>" + marker.name + "</h3>" + "</br>" + "<a href='/'>Homepage link</a>" + "</br>" + "<"
+                });
+                infoWindow.open(map, googleMarker);
+            });
+        });
+    };
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0cN_4dkCiDcup9Cc6YXIPyANXs9zPic&callback=initMap">
+</script>
+
+</body>
+</html>
+
+

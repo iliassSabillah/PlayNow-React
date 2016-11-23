@@ -1,0 +1,243 @@
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  
+ #formHeading{
+  font-family: 'Ubuntu';
+  font-size: 34px;
+  color: #fe8e60;
+ }
+
+ .yellow-text{
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 24px;
+ }
+
+ .white-text {
+  font-family: 'Ubuntu';
+  font-size: 20px;
+ }
+
+ .chewyText{
+  color: #6d6b70; 
+font-family: 'Chewy', cursive;
+font-size: 30px;
+ }
+
+ /* label color */
+.input-field label {
+color: #6d6b70; 
+font-family: 'Chewy', cursive;
+font-size: 30px;
+   }
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: blue;
+}
+
+.input-field input[type=password]:focus + label {
+ color: #fe8e60;
+}
+
+.input-field input[type=email]:focus + label {
+ color: #fe8e60;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #000;
+ box-shadow: 0 1px 0 0 #000;
+}
+
+/* label underline focus color */
+.input-field input[type=password]:focus {
+ border-bottom: 1px solid #000;
+ box-shadow: 0 1px 0 0 #000;
+}
+
+/* label underline focus color */
+.input-field input[type=email]:focus {
+ border-bottom: 1px solid #000;
+ box-shadow: 0 1px 0 0 #000;
+}
+
+
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid orange;
+     box-shadow: 0 1px 0 0 blue;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid pink;
+     box-shadow: 0 1px 0 0 yellow;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: purple;
+   }
+
+  /* Custom Stylesheet */
+  /** front page css
+   */
+
+  /*nav ul a,*/
+  /*nav .brand-logo {*/
+  /*color: #444;*/
+  /*}*/
+
+  p {
+      line-height: 2rem;
+  }
+
+  .button-collapse {
+      color: #26a69a;
+  }
+
+  .parallax-container {
+      min-height: 380px;
+      line-height: 0;
+      height: auto;
+      color: rgba(255,255,255,.9);
+  }
+  .parallax-container .section {
+      width: 100%;
+  }
+
+  @media only screen and (max-width : 992px) {
+      .parallax-container .section {
+          position: absolute;
+          top: 40%;
+      }
+      #index-banner .section {
+          top: 10%;
+      }
+  }
+
+  @media only screen and (max-width : 600px) {
+      #index-banner .section {
+          top: 0;
+      }
+  }
+
+  .icon-block {
+      padding: 0 15px;
+  }
+  .icon-block .material-icons {
+      font-size: inherit;
+  }
+
+  footer.page-footer {
+      margin: 0;
+  }
+  .header{
+      color:#fbc02d !important;
+      font-size: 2em;
+      font-weight:600;
+      text-shadow: 0px 0px 3px #000;
+      font-family: 'Poiret One', cursive;
+  }
+  #content {
+      width: 100% !important;
+  }
+
+  /*
+   #changeFont {
+      font-family: 'Chewy', cursive;
+    }
+  #headings{
+    color: #fe8e60;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  #formLabels{
+    color: #6d6b70;
+    font-family: 'Chewy', cursive;
+    font-size: 22px;
+  }
+  #orangeBox{
+    background-color: #FFA500;
+    opacity: 0.7;
+    padding: 30px;
+    border-radius: 15%;
+    position: absolute;
+  }
+  #h4Labels{
+    font-family: 'Anonymous Pro', monospace;
+    color: #6d6b70;
+    text-align: center;
+    font-size: 22px;
+  }
+  #submitBtn{
+    background-color: #99e265;
+    border-color: #99e265;
+    margin-left: 200px;
+  }
+  #cancelBtn{
+    background-color: #ff4b40;
+    border-color: #ff4b40;
+    display: inline-block;
+    margin-left: 50px;
+  }
+  #navbar{
+    background-color: #6d6b70;
+    height: 55px;
+    opacity: 0.9;
+  }
+  #navbarLinks{
+    color: #ffd130;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 24px;
+  }
+  /*
+  #verticalLine{
+  color: #fe8e60;
+  height: 5%;
+  width: 5%;
+  }
+  #headings{
+    color: #fe8e60;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  #formLabels{
+    color: #6d6b70;
+    font-family: 'Chewy', cursive;
+    font-size: 22px;
+  }
+  #orangeBox{
+    background-color: #FFA500;
+    opacity: 0.7;
+    padding: 30px;
+    border-radius: 15%;
+  }
+  #h4Labels{
+    font-family: 'Anonymous Pro', monospace;
+    color: #6d6b70;
+    text-align: center;
+    font-size: 22px;
+  }
+  #submitBtn{
+    background-color: #99e265;
+    border-color: #99e265;
+    margin: auto;
+  }
+  #cancelBtn{
+    background-color: #ff4b40;
+    border-color: #ff4b40;
+    margin: auto;
+  }
+  #footer{
+    background-color: #ffd130;
+    text-align: center;
+    opacity: 0.7;
+  }
+  #containerAfterNavbar{
+    padding-top: 10px;
+  }
+  */

@@ -18,12 +18,17 @@
 <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
 </head>
 
 <body>
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="/js/parallax.js"></script>
+<script type="text/javascript" src="/js/materialize.min.js"></script>
 
 <!-- Navigation bar -->
 <header>
@@ -33,28 +38,42 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/sports" class="white-text text-white">Find team</a></li>
           {{#if cur_user}}
-            <li><a href="/companies">Company</a></li>
+            <li><a href="/companies">Companies</a></li>
             <li><a href="#">{{cur_user.username}}</a></li>
-            <li><a href="#" id="logout" class="white-text text-white">Logout</a></li>
+            <li><a class="logout" class="white-text text-white">Logout</a></li>
           {{else}}
             <li><a href="/sign-up" class="white-text text-white">Sign up</a></li>
             <li><a href="/login" class="white-text text-white">Log In</a></li>
           {{/if}}
         </ul>
         <ul id="slide-out" class="side-nav">
-            <li><div class="userView">
+            <li>
+              <div class="userView">
                 <div class="background">
-                    <img src="images/office.jpg">
+                    <img src="/images/grass.jpeg">
                 </div>
-                <a href="#!user"><img class="circle" src=""></a>
-                <a href="#!name"><span class="white-text name">John Doe</span></a>
-                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-            </div></li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                {{#if cur_user}}
+                  <center><img class="circle" src="http://placehold.it/50x50"></center>
+                  <span class="white-text name" style="font-size: 20px; text-align: center;">{{cur_user.firstName}} {{cur_user.lastName}}</span>
+                  <span class="white-text name" style="text-align: center; padding-bottom: 10px;">{{cur_user.email}}</span>
+                {{else}}
+                  <p class="white-text name" style="font-size: 20px; text-align: center; padding-bottom: 20px;">Sign up to join the PlayNow community today!</p>
+                {{/if}}
+              </div>
+            </li>
+            {{#if cur_user}}
+              <li><a href="/sports"><i class="material-icons">search</i>Find Team</a></li>
+              <li><div class="divider"></div></li>
+              <li><a href="/companies"><i class="material-icons">cloud</i>Companies</a></li>
+              <li><div class="divider"></div></li>
+              <li><a href="#"><i class="material-icons">perm_identity</i>{{cur_user.username}}</a></li>
+              <li><div class="divider"></div></li>
+              <li><a class="logout"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>Logout</a></li>
+            {{else}}
+              <li><a href="/sign-up"><i class="fa fa-user-plus fa-lg" aria-hidden="true"></i>Sign up</a></li>
+              <li><div class="divider"></div></li>
+              <li><a href="/login"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>Login</a></li>
+            {{/if}}
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -88,17 +107,26 @@
           </div>
         </footer>
 
-  {{#if cur_user}}
   <script>
+  (function ($) {
+      $(function () {
+
+          $('.button-collapse').sideNav();
+          $('.parallax').parallax();
+
+      }); // end of document ready
+  })(jQuery); // end of jQuery name space
+  {{#if cur_user}}
+
     ;(function() {
-      $('#logout').click(function() {
+      $('.logout').click(function() {
         $.post("/logout", function() {
           window.location.href = '/';
         });
       });
     })();
-  </script>
   {{/if}}
+  </script>
 
 </body>
 

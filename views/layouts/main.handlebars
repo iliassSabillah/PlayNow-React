@@ -50,13 +50,14 @@
             <li>
               <div class="userView">
                 <div class="background">
-                    <img src="">
+                    <img src="/images/grass.jpeg">
                 </div>
                 {{#if cur_user}}
-                  <center><img class="circle" src=""></center>
-                  <p class="white-text name" style="font-size: 20px; text-align: center; padding: 10px;">{{cur_user.firstName}} {{cur_user.lastName}}</p>
+                  <center><img class="circle" src="http://placehold.it/50x50"></center>
+                  <span class="white-text name" style="font-size: 20px; text-align: center;">{{cur_user.firstName}} {{cur_user.lastName}}</span>
+                  <span class="white-text name" style="text-align: center; padding-bottom: 10px;">{{cur_user.email}}</span>
                 {{else}}
-                  <p class="white-text name" style="font-size: 20px; text-align: center; padding: 10px;">Sign up to join the PlayNow community today!</p>
+                  <p class="white-text name" style="font-size: 20px; text-align: center; padding-bottom: 20px;">Sign up to join the PlayNow community today!</p>
                 {{/if}}
               </div>
             </li>
@@ -106,7 +107,6 @@
           </div>
         </footer>
 
-  {{#if cur_user}}
   <script>
   (function ($) {
       $(function () {
@@ -116,6 +116,8 @@
 
       }); // end of document ready
   })(jQuery); // end of jQuery name space
+  {{#if cur_user}}
+
     ;(function() {
       $('.logout').click(function() {
         $.post("/logout", function() {
@@ -123,8 +125,8 @@
         });
       });
     })();
-  </script>
   {{/if}}
+  </script>
 
 </body>
 

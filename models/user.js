@@ -45,7 +45,7 @@ module.exports = (sequelize) => {
 
      sportspref: {
      type: Sequelize.STRING,
-     allowNull: false,
+     allowNull: true,
      validate: {
        notEmpty: true,
        isAlphanumeric: true
@@ -69,7 +69,7 @@ module.exports = (sequelize) => {
     }).then((hashedPw) => {
       user.password = hashedPw;
     })
-  )
+  );
 
   return User;
 };

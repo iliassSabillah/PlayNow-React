@@ -69,7 +69,7 @@
               <li><div class="divider"></div></li>
               <li><a class="logout"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>Logout</a></li>
             {{else}}
-              <li><a href="/sign-up"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>Sign up</a></li>
+              <li><a href="/sign-up"><i class="fa fa-user-plus fa-lg" aria-hidden="true"></i>Sign up</a></li>
               <li><div class="divider"></div></li>
               <li><a href="/login"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>Login</a></li>
             {{/if}}
@@ -108,9 +108,14 @@
 
   {{#if cur_user}}
   <script>
-    // Initialize collapse button
-    $(".button-collapse").sideNav();
+  (function ($) {
+      $(function () {
 
+          $('.button-collapse').sideNav();
+          $('.parallax').parallax();
+
+      }); // end of document ready
+  })(jQuery); // end of jQuery name space
     ;(function() {
       $('.logout').click(function() {
         $.post("/logout", function() {

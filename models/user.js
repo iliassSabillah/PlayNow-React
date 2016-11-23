@@ -7,15 +7,15 @@ module.exports = (sequelize) => {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
+        notEmpty: true
+      }
     },
     lastName: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
+        notEmpty: true
+      }
     },
     username: {
       type: Sequelize.STRING,
@@ -23,8 +23,8 @@ module.exports = (sequelize) => {
       primaryKey: true,
       validate: {
         notEmpty: true,
-        isAlphanumeric: true,
-      },
+        isAlphanumeric: true
+      }
     },
     email: {
       type: Sequelize.STRING,
@@ -32,15 +32,15 @@ module.exports = (sequelize) => {
       unique: true,
       validate: {
         notEmpty: true,
-        isEmail: true,
-      },
+        isEmail: true
+      }
     },
     password: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
+        notEmpty: true
+      }
     },
 
      sportspref: {
@@ -48,16 +48,16 @@ module.exports = (sequelize) => {
      allowNull: true,
      validate: {
        notEmpty: true,
-       isAlphanumeric: true,
-     },
+       isAlphanumeric: true
+     }
     },
    zipcode: {
      type: Sequelize.STRING,
      allowNull: false,
      validate: {
        notEmpty: true,
-       isAlphanumeric: true,
-     },
+       isAlphanumeric: true
+     }
   }
 });
 

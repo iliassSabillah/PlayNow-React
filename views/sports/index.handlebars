@@ -4,6 +4,10 @@
 .clicked {
   background-color: yellow;
 }
+
+#selectedChip{
+  visibility:hidden;
+}
 </style>
 
 <div class = "container">
@@ -66,7 +70,7 @@
   </form>
   </div>
 
-  <div id = "demo" style="text-align: center;"></div>
+ <input disabled id="selectedChip" name="selectedChip"> </input>
 </div>
 
 <script>
@@ -79,7 +83,8 @@ $(this).toggleClass('clicked');
 
  selectedChip = this.id;
 
- document.getElementById("demo").innerHTML = selectedChip;
+console.log(selectedChip);
+document.getElementById("selectedChip").value = selectedChip;
 
 });
 

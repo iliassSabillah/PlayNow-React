@@ -1,30 +1,58 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <h1 class="text-center">Sign up form</h1>
-      <form name="sign-up" action="/sign-up" method="post">
-          <div class="form-group">
-              <label for="inputFirstName">First Name</label>
-              <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="First Name">
-          </div>
-          <div class="form-group">
-              <label for="inputLastName">Last Name</label>
-              <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Last Name">
-          </div>
-          <div class="form-group">
-              <label for="inputUsername">Username</label>
-              <input type="text" class="form-control" id="inputUsername" name="inputUsername" placeholder="Username">
-          </div>
-          <div class="form-group">
-              <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
-          </div>
-          <div class="form-group">
-              <label for="inputPassword">Password</label>
-              <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-primary">Sign up</button>
-      </form>
-    </div>
-  </div>
+ <br/>
+<!-- Form -->
+<div class="row valign-wrapper">
+<form class="col s8" name = "sign-up" action="/sign-up" method="post">
+
+<p id = "formHeading"> Sign up for PlayNow  </p>
+
+<br/>
+<div class="row">
+<div class="input-field col s6">
+   <input id="inputFirstName" type="text" class="validate" name="inputFirstName">
+  <label for="inputFirstName">First Name</label>
 </div>
+ </div>
+
+ <div class="row">
+<div class="input-field col s6">
+  <input id="inputLastName" type="text" class="validate" name="inputLastName">
+  <label for="inputLastName">Last Name</label>
+</div>
+</div>
+
+  <div class="row">
+<div class="input-field col s6">
+  <input id="inputUsername" type="text" class="validate" name="inputUsername">
+  <label for="inputUsername">Username</label>
+</div>
+</div>
+
+  <div class="row">
+<div class="input-field col s6">
+  <input id="inputEmail" type="email" class="validate" name="inputEmail">
+  <label for="inputEmail">Email</label>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s6">
+  <input id="inputPassword" type="password" class="validate" name="inputPassword">
+  <label for="inputPassword">Password</label>
+</div>
+</div>
+
+<div class="row">
+<div class="input-field col s6">
+  <input id="inputZipcode" type="number" class="validate" name="inputZipcode">
+  <label for="inputZipcode">Zipcode</label>
+</div>
+</div>
+
+<br/>
+<button class="btn #8bc34a light-green white-text text-white" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+</form>
+</div>
+
+<br/>

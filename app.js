@@ -5,7 +5,7 @@ var express = require('express');
 var expressSession = require('express-session');
 var flash = require('connect-flash');
 var methodOverride = require('method-override');
-var models = require('./models/');
+var models = require('./models');
 var passport = require('./middlewares/authentication');
 var viewHelpers = require('./middlewares/viewHelpers');
 
@@ -19,12 +19,12 @@ app.use(expressSession(({ secret: 'keyboard cat', resave: false, saveUninitializ
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-//app.use(express.static('./public'));
+app.use(express.static('./public'));
 
 // views engine
 app.engine('handlebars', exphbs({
   layoutsDir: './views/layouts',
-  defaultLayout: 'main',
+  defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views/`);

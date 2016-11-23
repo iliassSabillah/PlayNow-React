@@ -2,8 +2,9 @@
   "name": "playnow",
   "version": "1.0.0",
   "description": "Pickup sport application",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon -L app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "method-override": "^2.3.6",
     "minimatch": "^3.0.3",
     "morgan": "^1.7.0",
+    "parallax.js": "^0.1.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",

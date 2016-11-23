@@ -20,6 +20,7 @@ module.exports = {
       username: req.body.inputUsername,
       email: req.body.inputEmail,
       password: req.body.inputPassword,
+      zipcode: req.body.inputZipcode,
     }).then((user) => {
       req.login(user, () =>
         res.redirect('/')

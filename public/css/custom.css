@@ -7,7 +7,7 @@
   main {
     flex: 1 0 auto;
   }
-  
+
  #formHeading{
   font-family: 'Ubuntu';
   font-size: 34px;
@@ -25,14 +25,14 @@
  }
 
  .chewyText{
-  color: #6d6b70; 
+  color: #6d6b70;
 font-family: 'Chewy', cursive;
 font-size: 30px;
  }
 
  /* label color */
 .input-field label {
-color: #6d6b70; 
+color: #6d6b70;
 font-family: 'Chewy', cursive;
 font-size: 30px;
    }
@@ -98,7 +98,7 @@ font-size: 30px;
   }
 
   .button-collapse {
-      color: #26a69a;
+      color: #ffffff;
   }
 
   .parallax-container {

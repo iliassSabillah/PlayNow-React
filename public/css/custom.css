@@ -1,11 +1,24 @@
+html, body {
+    padding-right: none;
+    padding-left: none;
+    overflow-x: hidden;
+}
+
+
   body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+  padding:0px;
+  margin:0px;
+
   }
 
   main {
-    flex: 1 0 auto;
+    /*flex: 1 0 auto;*/
+      padding-left: 0px;
+      padding-right: 0px;
+      width: 100%;
   }
 
  #formHeading{
@@ -101,11 +114,18 @@ font-size: 30px;
       color: #ffffff;
   }
 
+  .parallax {
+      padding-top: 120px;
+  }
+
   .parallax-container {
       min-height: 380px;
       line-height: 0;
+      width: auto;
       height: auto;
       color: rgba(255,255,255,.9);
+      margin-left: -300px;
+      margin-right: -300px;
   }
   .parallax-container .section {
       width: 100%;
@@ -137,6 +157,11 @@ font-size: 30px;
   footer.page-footer {
       margin: 0;
   }
+
+  #targetFooter {
+        margin-top: -40px;
+  }
+
   .header{
       color:#fbc02d !important;
       font-size: 2em;
@@ -145,8 +170,20 @@ font-size: 30px;
       font-family: 'Poiret One', cursive;
   }
   #content {
-      width: 100% !important;
+      width: auto;
   }
+
+  #index-banner {
+      width:auto;
+      margin-left: -300px;
+      margin-right: -300px;
+      margin-top: -22px;
+      height:100%;
+      padding-top: 200px;
+
+      padding-bottom: 200px;
+  }
+
 
   /*
    #changeFont {

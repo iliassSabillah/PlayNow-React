@@ -14,10 +14,10 @@ module.exports = {
  },
    submit(req, res) {
     models.User.update({
-      sportspref: req.body.selectedSport,
+      sportspref: req.body.sport,
     }, {
       where: {
-        username:req.params.username
+        username: req.params.username
       }
   }).then(() => {
         res.redirect('/sports')

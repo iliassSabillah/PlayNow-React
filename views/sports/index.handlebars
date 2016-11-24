@@ -48,6 +48,13 @@ $(".chip").click(function() {
 
   $("#selectedSport").val($("#"+selectedChip).text());
 
+  var selectedSport = $("#"+selectedChip).text();
+  console.log(selectedSport);
+
+  $.post('http://localhost:3000/sports', { sport: "elise" },
+    function(returnedData){
+         console.log(returnedData);
+       });
 });
 
 </script>

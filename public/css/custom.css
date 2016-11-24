@@ -15,7 +15,7 @@ html, body {
   }
 
   main {
-    /*flex: 1 0 auto;*/
+    /*flex: 1 0 auto; */
       padding-left: 0px;
       padding-right: 0px;
       width: 100%;
@@ -154,7 +154,7 @@ font-size: 30px;
       font-size: inherit;
   }
 
-  footer.page-footer {
+ footer.page-footer {
       margin: 0;
   }
 

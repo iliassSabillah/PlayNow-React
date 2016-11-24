@@ -17,7 +17,7 @@ module.exports = {
       sportspref: req.body.sport,
     }, {
       where: {
-        username: req.params.username
+        username: req.user.username
       }
   }).then(() => {
         res.redirect('/sports')

@@ -51,10 +51,7 @@ $(".chip").click(function() {
   var selectedSport = $("#"+selectedChip).text();
   console.log(selectedSport);
 
-  $.post('http://localhost:3000/sports', { sport: "elise" },
-    function(returnedData){
-         console.log(returnedData);
-       });
+  $.post('http://localhost:3000/sports', { sport: selectedSport });
 });
 
 </script>

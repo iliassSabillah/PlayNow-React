@@ -41,8 +41,8 @@ module.exports = (sequelize) => {
       validate: {
         notEmpty: true
       }
-    }
-/*
+    },
+
      sportspref: {
      type: Sequelize.STRING,
      allowNull: true,
@@ -60,7 +60,7 @@ module.exports = (sequelize) => {
        isAlphanumeric: true
      }
   }
-  */
+  
 });
 
   User.beforeCreate((user) =>

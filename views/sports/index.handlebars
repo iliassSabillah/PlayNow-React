@@ -44,12 +44,7 @@ $(".chip").click(function() {
   $(".chip").removeClass('clicked');
   $(this).toggleClass('clicked');
 
-  selectedChip = this.id;
-
-  $("#selectedSport").val($("#"+selectedChip).text());
-
-  var selectedSport = $("#"+selectedChip).text();
-  console.log(selectedSport);
+  var selectedSport = $(this).text();
 
   $.post('http://localhost:3000/sports', { sport: selectedSport });
 });

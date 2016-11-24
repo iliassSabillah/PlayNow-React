@@ -11,7 +11,7 @@
     <div id="content" class="col s12">
       {{#if cur_user}}
             <div id="map" class="col s12"></div>
-            <div class="container">
+            <!-- <div class="container">
             <div class="row">
               <div class="col m6 offset-m3 s12" style="overflow-y:scroll; height: 300px">
                   <ul class="collection">
@@ -45,8 +45,28 @@
                 <button type="submit" onClick="testing()" class="btn btn-primary">Add Marker</button>
             </form>
           </div>
+        </div> -->
+        <div data-remodal-id="modal">
+          <button data-remodal-action="close" class="remodal-close"></button>
+          <h1>Add new activity</h1>
+          <form>
+            <div class="row">
+            <div class="input-field col s6 offset-s3">
+               <input id="inputName" type="text" class="validate" name="inputName">
+              <label for="inputName">Name of activity</label>
+            </div>
+             </div>
+             <div class="row">
+             <div class="input-field col s6 offset-s3">
+                <input id="inputSport" type="text" class="validate" name="Sport">
+               <label for="inputSport">Sport</label>
+             </div>
+              </div>
+          </form>
+          <br>
+          <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+          <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
         </div>
-
       </div>
 {{else}}
     <!--homepage html before login-->
@@ -168,6 +188,7 @@
 </div>
 <!-- Google Map implementation -->
 <script>
+    var newMarker;
     var initMap = function () {
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
@@ -183,6 +204,7 @@
                 map.setCenter(initialLocation);
             });
         }
+
         // for each marker passed through, add it to the map with a popup
         addMarkers.forEach(function (marker) {
             console.log(marker.lat);
@@ -200,6 +222,35 @@
                 infoWindow.open(map, googleMarker);
             });
         });
+
+        // Click to add marker on map
+        google.maps.event.addListener(map, 'click', function(event) {
+          if (event.latLng){
+            newMarker = event.latLng;
+            var inst = $('[data-remodal-id=modal]').remodal();
+            inst.open();
+            $(document).on('confirmation', '.remodal', function () {
+              var chosenName = $('#inputName').val();
+              var chosenSport = $('#inputSport').val();
+              $.post('http://localhost:3000/',
+                {
+                  name: chosenName,
+                  sport: chosenSport,
+                  lat: 99,
+                  lng: 99
+                }
+              );
+              placeMarker(newMarker);
+            });
+          }
+        });
+
+        function placeMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
     };
 </script>
 <script async defer

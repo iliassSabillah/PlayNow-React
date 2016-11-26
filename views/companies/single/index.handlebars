@@ -1,11 +1,11 @@
-<header class="intro-header" style="background-image: url('/img/about-bg.jpg')">
+<header class="intro-header">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-heading">
-          <h1>{{company.companyName}}</h1>
+          <center><h1>{{company.companyName}}</h1></center>
           <hr class="small">
-          <span class="subheading">By: {{company.username}}</span>
+          <center><span class="subheading">By: {{company.username}}</span></center>
         </div>
       </div>
     </div>
@@ -15,11 +15,15 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <p><a href={{company.companyWebsite}}>website</a></p>
-      <p>{{company.companyPhone}}</p>
-      <p>{{company.state}}</p>
-      <p>{{company.city}}</p>
-      <p>{{company.zipcode}}</p>
+      
+      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+      <div id="map-canvas"></div>
+       
+
+      <p>Phone: {{company.companyPhone}} </br>
+        {{company.city}},  {{company.state}}  {{company.zipcode}}</br>
+        <a href={{company.companyWebsite}}>{{company.companyWebsite}}</a></p>  
+
     </div>
   </div>
 </div>

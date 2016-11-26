@@ -1,9 +1,9 @@
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+<header class="intro-header">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="site-heading">
-          <h1>Companies</h1>
+          <h1>teams</h1>
           <hr class="small">
         </div>
       </div>
@@ -16,14 +16,14 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         {{#if cur_user}}
         <div class="create-post">
-          <a class="btn btn-default" href="/companies/new">Create Company</a>
+          <a class="btn btn-default" href="/teams/new">Create a team</a>
         </div>
         {{/if}}
-        {{#each company}}
+        {{#each team}}
           <div class="post-preview">
-              <a href="/companies/{{this.username}}/{{this.slug}}">
+              <a href="/teams/{{this.username}}/{{this.slug}}">
                   <h2 class="post-title">
-                      {{this.companyName}}
+                      {{this.teamName}}
                   </h2>
               </a>
               <p class="post-meta">Created by <a href="/users/{{this.username}}">{{this.username}}</a></p>

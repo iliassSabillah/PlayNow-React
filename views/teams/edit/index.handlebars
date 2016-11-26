@@ -1,0 +1,74 @@
+<header class="intro-header" style="background-image: url('/img/contact-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>Edit A team</h1>
+          <hr class="small">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <form name="edit-post" method="POST" action="/teams/{{team.username}}/{{team.slug}}?_method=PUT">
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>TeamName</label>
+            <input type="text" class="form-control" name="team" value="{{team.teamName}}" required data-validation-required-message="Please enter a team name.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Sporttype</label>
+            <input type="text" class="form-control" name="sporttype" value="{{team.sporttype}}"" required data-validation-required-message="Please enter sport type.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>TeamPhone</label>
+            <input type="text" class="form-control" name="teamPhone" value="{{team.teamPhone}}"" required data-validation-required-message="Please enter team phone number.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Location</label>
+            <input type="text" class="form-control" name="location" value="{{team.location}}"" required data-validation-required-message="Please enter a location.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Day</label>
+            <input type="text" class="form-control" name="day" value="{{team.day}}"" required data-validation-required-message="Please enter a day.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Time</label>
+            <input type="text" class="form-control" name="time" value="{{team.time}}"" required data-validation-required-message="Please enter a time.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-xs-6 text-right">
+              <button type="submit" class="btn btn-default">Edit</button>
+          </div>
+      </form>
+      <form name="delete-post" method="POST" action="/teams/{{team.username}}/{{team.slug}}?_method=DELETE">
+          <div class="form-group col-xs-6 text-left">
+            <button type="submit" class="btn btn-default">Delete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

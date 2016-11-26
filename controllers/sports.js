@@ -14,8 +14,11 @@ module.exports = {
  },
    submit(req, res) {
     models.User.update({
-      sportspref: req.body.sportspref,
-    }, {where: {username:req.params.username} 
+      sportspref: req.body.sport,
+    }, {
+      where: {
+        username: req.user.username
+      }
   }).then(() => {
         res.redirect('/sports')
     }).catch((err) => {

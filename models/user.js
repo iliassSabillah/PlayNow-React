@@ -47,8 +47,7 @@ module.exports = (sequelize) => {
      type: Sequelize.STRING,
      allowNull: true,
      validate: {
-       notEmpty: true,
-       isAlphanumeric: true
+       notEmpty: true
      }
     },
    zipcode: {

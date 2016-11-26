@@ -5,7 +5,7 @@
         <div class="page-heading">
           <center><h1>{{team.teamName}}</h1></center>
           <hr class="small">
-          <center><span class="subheading">By: {{team.username}}  {{team.teamPhone}}</span></center>
+          <center><span class="subheading">Created by: {{team.username}} : {{team.teamPhone}}</span></center>
         </div>
       </div>
     </div>
@@ -15,16 +15,26 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        {{team.sporttype}} </br>
-        {{team.location}}, {{team.day}}  {{team.time}}</br></br>
-        <center><h3> Team Members</h3>
-        <h4>{{team.username}} 
-        {{user.sportspref}}</h4></center>
-
-        <div class="create-post">
-          <a class="btn btn-default" href="/teams/new">Join this team</a>
-          <a class="btn btn-default" href="/teams/new">Cancel</a> </br></br>
+      <div style ="float:left">
+        <h4>{{team.sporttype}} Team</h4>
+        <h5>{{team.location}} </br>
+            {{team.day}}  {{team.time}}</h5>
+        <div style="height: 100px; width: 400px; background-color:#00BB00">
+            Static Map here
         </div>
+      </div>
+      <div style = "float:right">
+        <h3> Team Members:</h3>
+        <div style="height: 100px; width: 400px; padding-left:15px"> 
+            <h4>{{team.username}} 
+            {{user.sportspref}}
+            </h4>
+            <center><div class="create-post">
+              <a class="btn btn-default" href="#">Join this team</a>
+              <a class="btn btn-default" href="#">Cancel</a> 
+      </div></center>
+        </div>
+      </div>
     </div>
   </div>
 </div>

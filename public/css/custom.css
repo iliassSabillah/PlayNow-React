@@ -163,6 +163,7 @@ font-size: 30px;
       bottom: 0;
       left: 0;
       padding: 1rem;
+
   }
 /*.footer {*/
     /*position: absolute;*/
@@ -201,7 +202,6 @@ font-size: 30px;
       margin-top: -22px;
       height:100%;
       padding-top: 200px;
-
       padding-bottom: 200px;
   }
 

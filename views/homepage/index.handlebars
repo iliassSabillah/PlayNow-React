@@ -3,14 +3,31 @@
     var addMarkers = {{{result}}}
 </script>
 <style>
+    .map_container{
+        width:100%;
+        margin: 0 auto;
+        margin-top:50px;
+    }
     #map {
         height: 400px;
+        overflow: hidden;
+        padding-bottom: 22.25%;
+        padding-top: 30px;
+        position: relative;
+    }
+    #map_container{
+        position: relative;
     }
 </style>
 
     <div id="content" class="col s12">
       {{#if cur_user}}
-            <div id="map" class="col s12"></div>
+              <div class="map_container">
+                <div id="map_container">
+                    <div id="map" class="col s12"></div>
+                </div>
+              </div>
+
             <div class="container">
             <div class="row">
               <div class="col m6 offset-m3 s12" style="overflow-y:scroll; height: 300px">
@@ -198,8 +215,15 @@
                 });
                 infoWindow.open(map, googleMarker);
             });
+            //resize map
+
         });
-    };
+        google.maps.event.addDomListener(window, "resize", function() {
+            var center = map.getCenter();
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(center);
+        });
+        };
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0cN_4dkCiDcup9Cc6YXIPyANXs9zPic&callback=initMap">

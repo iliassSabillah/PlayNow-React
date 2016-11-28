@@ -242,7 +242,12 @@
               );
               placeMarker(newMarker);
               $('#inputName').val('');
+              $('#inputSport').val('');
+            });
+            $(document).on('cancellation', '.remodal', function () {
+              newMarker = "";
               $('#inputName').val('');
+              $('#inputSport').val('');
             });
           }
         });

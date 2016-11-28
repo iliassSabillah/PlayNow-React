@@ -18,14 +18,14 @@ module.exports = (sequelize) => {
       },
     },
     lat: {
-      type: Sequelize.DECIMAL(10, 6),
+      type: Sequelize.DECIMAL,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
     lng: {
-      type: Sequelize.DECIMAL(10, 6),
+      type: Sequelize.DECIMAL,
       allowNull: false,
       validate: {
         notEmpty: true,

@@ -236,11 +236,13 @@
                 {
                   name: chosenName,
                   sport: chosenSport,
-                  lat: 99,
-                  lng: 99
+                  lat: newMarker.lat(),
+                  lng: newMarker.lng()
                 }
               );
               placeMarker(newMarker);
+              $('#inputName').val('');
+              $('#inputName').val('');
             });
           }
         });

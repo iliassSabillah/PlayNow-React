@@ -23,6 +23,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   models.Markers.create({
+    name: req.body.name,
     type: req.body.sport,
     lat: req.body.lat,
     lng: req.body.lng

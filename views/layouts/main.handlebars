@@ -58,7 +58,7 @@
                   <li><div class="divider"></div></li>
                   <li><a href="/companies"><i class="material-icons">cloud</i>Companies</a></li>
                   <li><div class="divider"></div></li>
-                  <li><a href="/"><i class="material-icons">perm_identity</i>{{cur_user.username}}</a></li>
+                  <li><a href="/profile"><i class="material-icons">perm_identity</i>{{cur_user.username}}</a></li>
                   <li><div class="divider"></div></li>
                   <li><a class="logout"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>Logout</a></li>
                 {{else}}
@@ -72,7 +72,7 @@
                 <li><a href="/sports" class="white-text text-white">Find team</a></li>
                 {{#if cur_user}}
                 <li><a href="/companies">Company</a></li>
-                <li><a href="#">{{cur_user.username}}</a></li>
+                <li><a href="/profile">{{cur_user.username}}</a></li>
                 <li><a href="#" class="logout" class="white-text text-white">Logout</a></li>
                {{else}}
                 <li><a href="/sign-up" class="white-text text-white">Sign up</a></li>

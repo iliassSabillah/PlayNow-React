@@ -1,31 +1,36 @@
 <br/>
-<!-- Form -->
+<!-- Login Form -->
 <div class="row valign-wrapper">
-    <form class="col s8" name="login" action="/login" method="post">
+  <form class="col s8 offset-2" name="login" action="/login" method="post">
+    <p id="formHeading"> Log In </p>
 
-        <p id="formHeading"> Log In </p>
+    <br/>
 
-        <br/>
+    <div class="row">
+      <div class="input-field col s6">
+          <input id="username" type="text" class="validate" name="username">
+        <label for="username">Username</label>
+      </div>
+    </div>
 
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="username" type="text" class="validate" name="username">
-                <label for="username">Username</label>
-            </div>
-        </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="password" type="password" class="validate" name="password">
+        <label for="password">Password</label>
+      </div>
+    </div>
 
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="password" type="password" class="validate" name="password">
-                <label for="password">Password</label>
-            </div>
-        </div>
-
-        <br/>
-        <button class="btn #8bc34a light-green white-text text-white" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-    </form>
+    <br/>
+    {{#if error}}
+    <div class="red-text" style="font-weight: bold; margin-bottom: 20px;">
+      {{error}}
+    </div>
+    {{/if}}
+    <button class="btn #8bc34a light-green white-text text-white" type="submit" name="action">
+      Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </form>
 </div>
 
 <br/>

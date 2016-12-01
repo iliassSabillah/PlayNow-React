@@ -58,10 +58,16 @@
              </div>
              <div class="row">
              <div class="input-field col s6 offset-s3">
-                <input id="inputSport" type="text" class="validate" name="Sport">
+                <input id="inputSport" type="text" class="validate" name="inputSport">
                <label for="inputSport">Sport</label>
              </div>
               </div>
+              <div class="row">
+              <div class="input-field col s6 offset-s3">
+                 <input id="inputParticipants" type="number" name="inputParticipants">
+                <label for="inputParticipants">Participants</label>
+              </div>
+               </div>
           </form>
           <br>
           <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
@@ -217,7 +223,7 @@
             // Bind a popup to the marker
             googleMarker.addListener("click", function () {
                 var infoWindow = new google.maps.InfoWindow({
-                    content: "<h3>" + marker.name + "</h3>" + "</br>" + "<a href='/'>Homepage link</a>" + "</br>" + "<"
+                    content: "<h3>" + marker.name + "</h3>" + "</br>" + "Participants: " + marker.participants + "</br>" + "<a class=\"waves-effect waves-light btn\">Join</a>" + "</br>"
                 });
                 infoWindow.open(map, googleMarker);
             });
@@ -230,25 +236,34 @@
             var inst = $('[data-remodal-id=modal]').remodal();
             inst.open();
             $(document).on('confirmation', '.remodal', function () {
+
               var chosenName = $('#inputName').val();
               var chosenSport = $('#inputSport').val();
+              var chosenParticipants = parseInt($('#inputParticipants').val());
+
               $.post('http://localhost:3000/',
                 {
                   name: chosenName,
                   sport: chosenSport,
+                  participants: chosenParticipants,
                   lat: newMarker.lat(),
                   lng: newMarker.lng()
                 }
               );
+
               placeMarker(newMarker);
               $('#inputName').val('');
               $('#inputSport').val('');
+              $('#inputParticipants').val('');
             });
+
             $(document).on('cancellation', '.remodal', function () {
               newMarker = "";
               $('#inputName').val('');
               $('#inputSport').val('');
+              $('#inputParticipants').val('');
             });
+
           }
         });
 

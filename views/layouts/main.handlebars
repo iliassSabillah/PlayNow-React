@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
   <meta charset="utf-8">
   <title>PlayNow</title>
@@ -35,17 +34,6 @@
 <nav>
     <div class="nav-wrapper yellow darken-2">
     <a href="/" class="brand-logo white-text text-white" style="margin-left: 20px;">PlayNow</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/sports" class="white-text text-white">Find team</a></li>
-          {{#if cur_user}}
-            <li><a href="/companies">Companies</a></li>
-            <li><a href="#">{{cur_user.username}}</a></li>
-            <li><a class="logout" class="white-text text-white">Logout</a></li>
-          {{else}}
-            <li><a href="/sign-up" class="white-text text-white">Sign up</a></li>
-            <li><a href="/login" class="white-text text-white">Log In</a></li>
-          {{/if}}
-        </ul>
         <ul id="slide-out" class="side-nav">
             <li>
               <div class="userView">
@@ -76,6 +64,17 @@
             {{/if}}
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/sports" class="white-text text-white">Find team</a></li>
+            {{#if cur_user}}
+            <li><a href="/companies">Company</a></li>
+            <li><a href="#">{{cur_user.username}}</a></li>
+            <li><a href="#" id="logout" class="white-text text-white">Logout</a></li>
+           {{else}}
+            <li><a href="/sign-up" class="white-text text-white">Sign up</a></li>
+            <li><a href="/login" class="white-text text-white">Log In</a></li>
+            {{/if}}
+        </ul>
     </div>
 </nav>
 </header>

@@ -299,3 +299,9 @@ font-size: 30px;
     padding-top: 10px;
   }
   */
+
+/* >> Google Maps << */
+
+#map {
+    height: 500px;
+}

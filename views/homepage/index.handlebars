@@ -2,44 +2,38 @@
     //Marker database table json
     var addMarkers = {{{result}}}
 </script>
-<style>
-    #map {
-        height: 400px;
-    }
-</style>
-
-    <div id="content" class="col s12">
-      {{#if cur_user}}
-            <div id="map" class="col s12"></div>
-            <!-- Modal for adding new marker -->
+<div id="content" class="col s12">
+    {{#if cur_user}}
+        <div id="map" class="col s12"></div>
+        <!-- Modal for adding new marker -->
         <div data-remodal-id="modal">
-          <button data-remodal-action="close" class="remodal-close"></button>
-          <h1>Add new activity</h1>
-          <form>
-            <div class="row">
-            <div class="input-field col s6 offset-s3">
-               <input id="inputName" type="text" class="validate" name="inputName">
-              <label for="inputName">Name of activity</label>
-            </div>
-             </div>
-             <div class="row">
-             <div class="input-field col s6 offset-s3">
-                <input id="inputSport" type="text" class="validate" name="inputSport">
-               <label for="inputSport">Sport</label>
-             </div>
-              </div>
-              <div class="row">
-              <div class="input-field col s6 offset-s3">
-                 <input id="inputParticipants" type="number" name="inputParticipants">
-                <label for="inputParticipants">Participants</label>
-              </div>
-               </div>
-          </form>
-          <br>
-          <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
-          <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <h1>Add new activity</h1>
+            <form>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <input id="inputName" type="text" class="validate" name="inputName">
+                        <label for="inputName">Name of activity</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <input id="inputSport" type="text" class="validate" name="inputSport">
+                        <label for="inputSport">Sport</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <input id="inputParticipants" type="number" name="inputParticipants">
+                        <label for="inputParticipants">Participants</label>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+            <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
         </div>
-      </div>
+</div>
 {{else}}
     <!--homepage html before login-->
     <div id="index-banner" class="parallax-container">
@@ -72,9 +66,8 @@
                         <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
                         <h5 class="center">Lorem Ipsum is simply</h5>
 
-                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         </p>
                     </div>
                 </div>
@@ -84,10 +77,8 @@
                         <h2 class="center brown-text"><i class="material-icons">group</i></h2>
                         <h5 class="center">Lorem ipsum dolor</h5>
 
-                        <p class="light">Lorem ipsum dolor sit amet, vix graece libris theophrastus ex. Brute semper an vim, aperiam aliquando ea sea.
-                            Adhuc apeirian adipiscing id vel.
-                            At labores elaboraret intellegebat qui. Mea hinc choro utroque eu.
-                            Vim enim putent ea, verterem oportere patrioque ius ea.</p>
+                        <p class="light">Lorem ipsum dolor sit amet, vix graece libris theophrastus ex. Brute semper an vim, aperiam aliquando ea sea. Adhuc apeirian adipiscing id vel. At labores elaboraret intellegebat qui. Mea hinc choro utroque eu. Vim enim putent
+                            ea, verterem oportere patrioque ius ea.</p>
                     </div>
                 </div>
 
@@ -96,9 +87,8 @@
                         <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
                         <h5 class="center">Easy to work with</h5>
 
-                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                     </div>
                 </div>
             </div>
@@ -115,9 +105,7 @@
                 </div>
             </div>
         </div>
-        <div class="parallax"><img
-                src="https://secure.static.tumblr.com/b053d3e85382f6c428370cc6aaa6729a/q48is5n/ybJn1wncb/tumblr_static_cricket_sports_1.jpg"
-                alt="Unsplashed background img 2"></div>
+        <div class="parallax"><img src="https://secure.static.tumblr.com/b053d3e85382f6c428370cc6aaa6729a/q48is5n/ybJn1wncb/tumblr_static_cricket_sports_1.jpg" alt="Unsplashed background img 2"></div>
     </div>
 
     <div class="container">
@@ -127,14 +115,10 @@
                 <div class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
                     <h4>Contact Us</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                        scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
-                        fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
-                        ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam
-                        eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi
-                        massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non
-                        tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-                        Curae;</p>
+                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien
+                        id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed
+                        ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                    </p>
                 </div>
             </div>
 
@@ -154,100 +138,11 @@
         </div>
     </div>
 
-{{/if}}
-</div>
-</div>
-</div>
-<!-- Google Map implementation -->
-<script>
-    var newMarker;
-    var map;
-
-    var addAnotherMarker = function (marker) {
-      var position = new google.maps.LatLng(marker.lat, marker.lng);
-      var googleMarker = new google.maps.Marker({
-          position: position,
-          title: marker.name,
-          map: map
-      });
-      // Bind a popup to the marker
-      googleMarker.addListener("click", function () {
-          var infoWindow = new google.maps.InfoWindow({
-              content: "<h3>" + marker.name + "</h3>" + "</br>" + marker.sport + "</br>" + "Participants: " + "x/" + marker.participants + "</br>" + "<a class=\"waves-effect waves-light btn\">Join</a>" + "</br>"
-          });
-          infoWindow.open(map, googleMarker);
-      });
-    };
-
-    var initMap = function () {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-                lat: 40.6,
-                lng: -74
-            },
-            zoom: 10
-        });
-        // if brower support available, ask user for location data and set the map view
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                map.setCenter(initialLocation);
-            });
-        }
-
-        // for each marker passed through, add it to the map with a popup
-        addMarkers.forEach(function (marker) {
-          addAnotherMarker(marker);
-        });
-
-        // Click to add marker on map
-        google.maps.event.addListener(map, 'click', function(event) {
-          if (event.latLng){
-            newMarker = event.latLng;
-            var inst = $('[data-remodal-id=modal]').remodal();
-            inst.open();
-            $(document).on('confirmation', '.remodal', function () {
-
-              var chosenName = $('#inputName').val();
-              var chosenSport = $('#inputSport').val();
-              var chosenParticipants = $('#inputParticipants').val();
-
-              $.post('http://localhost:3000/',
-                {
-                  name: chosenName,
-                  sport: chosenSport,
-                  participants: chosenParticipants,
-                  lat: newMarker.lat(),
-                  lng: newMarker.lng()
-                }
-              ).done(function (marker) {
-                addAnotherMarker(marker);
-              });
-
-              placeMarker(newMarker);
-              $('#inputName').val('');
-              $('#inputSport').val('');
-              $('#inputParticipants').val('');
-            });
-
-            $(document).on('cancellation', '.remodal', function () {
-              newMarker = "";
-              $('#inputName').val('');
-              $('#inputSport').val('');
-              $('#inputParticipants').val('');
-            });
-
-          }
-        });
-
-        function placeMarker(location) {
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-        }
-    };
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0cN_4dkCiDcup9Cc6YXIPyANXs9zPic&callback=initMap">
-</script>
+    {{/if}}
+    </div>
+    </div>
+    </div>
+    <!-- Google Map implementation -->
+    <script src="/js/googlemaps.js">
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0cN_4dkCiDcup9Cc6YXIPyANXs9zPic&callback=initMap"></script>

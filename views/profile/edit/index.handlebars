@@ -1,0 +1,56 @@
+<div style="width: 40%; float: left; margin-left: 250px;">
+    <form class="col s6" name="edit-profile" action="/profile/edit" method="POST">
+        <p id="formHeading">Account information</p>
+        <div class="row col s6">
+            <div class="row">
+                <div class="input-field col s8">
+                    <input id="first_name" name="first_name" value="{{cur_user.firstName}}" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="row">
+                <div class="input-field col s8">
+                    <input id="last_name" name="last_name" value= {{cur_user.lastName}} type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8">
+                    <input id="username" name="username" disabled placeholder= {{cur_user.username}} type="text" class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8">
+                    <input id="email" name="email" value= {{cur_user.email}} type="text" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+        </div>
+        <a class="btn black white-text text-white" href="/profile/">Go Back</a>
+        <button class="btn #8bc34a light-green white-text text-white" type="submit">Save Changes
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+
+
+<div class="col s6" style="width: 40%; float: right; ">
+    <p id="formHeading">Favorite sports</p>
+    <p class="chewyText">{{cur_user.sportspref}}</p>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+
+
+
+
+
+    </div>
+</div>

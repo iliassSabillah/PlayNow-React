@@ -31,8 +31,15 @@ module.exports = (sequelize) => {
         notEmpty: true,
       },
     },
-    type: {
+    sport: {
       type: Sequelize.STRING,
+      allowNull: true,
+      validate: {
+        notEmpty: false,
+      },
+    },
+    participants: {
+      type: Sequelize.INTEGER,
       allowNull: true,
       validate: {
         notEmpty: false,

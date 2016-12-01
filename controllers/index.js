@@ -24,11 +24,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   models.Markers.create({
     name: req.body.name,
-    type: req.body.sport,
+    sport: req.body.sport,
+    participants: req.body.participants,
     lat: req.body.lat,
     lng: req.body.lng
-  }).then(() => {
-    res.redirect('/');
+  }).then((marker) => {
+    res.json(marker);
   });
 });
 

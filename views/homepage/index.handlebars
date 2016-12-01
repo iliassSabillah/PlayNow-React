@@ -195,8 +195,26 @@
 <!-- Google Map implementation -->
 <script>
     var newMarker;
+    var map;
+
+    var addAnotherMarker = function (marker) {
+      var position = new google.maps.LatLng(marker.lat, marker.lng);
+      var googleMarker = new google.maps.Marker({
+          position: position,
+          title: marker.name,
+          map: map
+      });
+      // Bind a popup to the marker
+      googleMarker.addListener("click", function () {
+          var infoWindow = new google.maps.InfoWindow({
+              content: "<h3>" + marker.name + "</h3>" + "</br>" + marker.sport + "</br>" + "Participants: " + "x/" + marker.participants + "</br>" + "<a class=\"waves-effect waves-light btn\">Join</a>" + "</br>"
+          });
+          infoWindow.open(map, googleMarker);
+      });
+    };
+
     var initMap = function () {
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: 40.6,
                 lng: -74
@@ -213,20 +231,7 @@
 
         // for each marker passed through, add it to the map with a popup
         addMarkers.forEach(function (marker) {
-            console.log(marker.lat);
-            var position = new google.maps.LatLng(marker.lat, marker.lng);
-            var googleMarker = new google.maps.Marker({
-                position: position,
-                title: marker.name,
-                map: map
-            });
-            // Bind a popup to the marker
-            googleMarker.addListener("click", function () {
-                var infoWindow = new google.maps.InfoWindow({
-                    content: "<h3>" + marker.name + "</h3>" + "</br>" + "Participants: " + marker.participants + "</br>" + "<a class=\"waves-effect waves-light btn\">Join</a>" + "</br>"
-                });
-                infoWindow.open(map, googleMarker);
-            });
+          addAnotherMarker(marker);
         });
 
         // Click to add marker on map
@@ -239,7 +244,7 @@
 
               var chosenName = $('#inputName').val();
               var chosenSport = $('#inputSport').val();
-              var chosenParticipants = parseInt($('#inputParticipants').val());
+              var chosenParticipants = $('#inputParticipants').val();
 
               $.post('http://localhost:3000/',
                 {
@@ -249,7 +254,9 @@
                   lat: newMarker.lat(),
                   lng: newMarker.lng()
                 }
-              );
+              ).done(function (marker) {
+                addAnotherMarker(marker);
+              });
 
               placeMarker(newMarker);
               $('#inputName').val('');

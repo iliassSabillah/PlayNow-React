@@ -18,21 +18,28 @@ module.exports = (sequelize) => {
       },
     },
     lat: {
-      type: Sequelize.DECIMAL(10, 6),
+      type: Sequelize.DECIMAL,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
     lng: {
-      type: Sequelize.DECIMAL(10, 6),
+      type: Sequelize.DECIMAL,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
-    type: {
+    sport: {
       type: Sequelize.STRING,
+      allowNull: true,
+      validate: {
+        notEmpty: false,
+      },
+    },
+    participants: {
+      type: Sequelize.INTEGER,
       allowNull: true,
       validate: {
         notEmpty: false,

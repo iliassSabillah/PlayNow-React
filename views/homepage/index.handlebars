@@ -3,62 +3,41 @@
     var addMarkers = {{{result}}}
 </script>
 <style>
-    .map_container{
-        width:100%;
-        margin: 0 auto;
-    }
     #map {
         height: 400px;
-        overflow: hidden;
-        position: relative;
-    }
-    #map_container{
-        position: relative;
     }
 </style>
 
     <div id="content" class="col s12">
       {{#if cur_user}}
-              <div class="map_container">
-                <div id="map_container">
-                    <div id="map" class="col s12"></div>
-                </div>
-              </div>
-
-            <div class="container">
+            <div id="map" class="col s12"></div>
+            <!-- Modal for adding new marker -->
+        <div data-remodal-id="modal">
+          <button data-remodal-action="close" class="remodal-close"></button>
+          <h1>Add new activity</h1>
+          <form>
             <div class="row">
-              <div class="col m6 offset-m3 s12" style="overflow-y:scroll; height: 300px">
-                  <ul class="collection">
-                      {{#each marker}}
-                          <li class="collection-item avatar">
-                              <img src="" alt="" class="circle">
-                              <span class="title">{{name}}</span>
-                              <p>{{lat}} <br> {{lng}}
-                              </p>
-                              <a href="" class="secondary-content"><i class="material-icons">grade</i></a>
-                          </li>
-                      {{/each}}
-                  </ul>
-              </div>
+            <div class="input-field col s6 offset-s3">
+               <input id="inputName" type="text" class="validate" name="inputName">
+              <label for="inputName">Name of activity</label>
             </div>
-          <div class="row">
-            <h2> Add marker to database: </h2>
-            <form name="markers" action="/markers" method="post">
-                <div class="input-field">
-                    <label for="inputName">Name</label>
-                    <input type="text" id="inputName" name="inputName">
-                </div>
-                <div class="input-field">
-                    <label for="inputLatitude">Latitude</label>
-                    <input type="text" id="inputLatitude" name="inputLatitude">
-                </div>
-                <div class="input-field">
-                    <label for="inputLongitude">Longitude</label>
-                    <input type="text" id="inputLongitude" name="inputLongitude">
-                </div>
-                <button type="submit" onClick="testing()" class="btn btn-primary">Add Marker</button>
-            </form>
-          </div>
+             </div>
+             <div class="row">
+             <div class="input-field col s6 offset-s3">
+                <input id="inputSport" type="text" class="validate" name="inputSport">
+               <label for="inputSport">Sport</label>
+             </div>
+              </div>
+              <div class="row">
+              <div class="input-field col s6 offset-s3">
+                 <input id="inputParticipants" type="number" name="inputParticipants">
+                <label for="inputParticipants">Participants</label>
+              </div>
+               </div>
+          </form>
+          <br>
+          <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+          <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
         </div>
       </div>
 {{else}}
@@ -67,6 +46,7 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
+                <h1 class="header center teal-text text-lighten-2">Welcome</h1>
                 <div class="row center">
                     <h5 class="header col s12">Playnow. Enjoy your favorite sport. Meet new friends</h5>
                 </div>
@@ -180,8 +160,27 @@
 </div>
 <!-- Google Map implementation -->
 <script>
+    var newMarker;
+    var map;
+
+    var addAnotherMarker = function (marker) {
+      var position = new google.maps.LatLng(marker.lat, marker.lng);
+      var googleMarker = new google.maps.Marker({
+          position: position,
+          title: marker.name,
+          map: map
+      });
+      // Bind a popup to the marker
+      googleMarker.addListener("click", function () {
+          var infoWindow = new google.maps.InfoWindow({
+              content: "<h3>" + marker.name + "</h3>" + "</br>" + marker.sport + "</br>" + "Participants: " + "x/" + marker.participants + "</br>" + "<a class=\"waves-effect waves-light btn\">Join</a>" + "</br>"
+          });
+          infoWindow.open(map, googleMarker);
+      });
+    };
+
     var initMap = function () {
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: 40.6,
                 lng: -74
@@ -195,31 +194,59 @@
                 map.setCenter(initialLocation);
             });
         }
+
         // for each marker passed through, add it to the map with a popup
         addMarkers.forEach(function (marker) {
-            console.log(marker.lat);
-            var position = new google.maps.LatLng(marker.lat, marker.lng);
-            var googleMarker = new google.maps.Marker({
-                position: position,
-                title: marker.name,
+          addAnotherMarker(marker);
+        });
+
+        // Click to add marker on map
+        google.maps.event.addListener(map, 'click', function(event) {
+          if (event.latLng){
+            newMarker = event.latLng;
+            var inst = $('[data-remodal-id=modal]').remodal();
+            inst.open();
+            $(document).on('confirmation', '.remodal', function () {
+
+              var chosenName = $('#inputName').val();
+              var chosenSport = $('#inputSport').val();
+              var chosenParticipants = $('#inputParticipants').val();
+
+              $.post('http://localhost:3000/',
+                {
+                  name: chosenName,
+                  sport: chosenSport,
+                  participants: chosenParticipants,
+                  lat: newMarker.lat(),
+                  lng: newMarker.lng()
+                }
+              ).done(function (marker) {
+                addAnotherMarker(marker);
+              });
+
+              placeMarker(newMarker);
+              $('#inputName').val('');
+              $('#inputSport').val('');
+              $('#inputParticipants').val('');
+            });
+
+            $(document).on('cancellation', '.remodal', function () {
+              newMarker = "";
+              $('#inputName').val('');
+              $('#inputSport').val('');
+              $('#inputParticipants').val('');
+            });
+
+          }
+        });
+
+        function placeMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location,
                 map: map
             });
-            // Bind a popup to the marker
-            googleMarker.addListener("click", function () {
-                var infoWindow = new google.maps.InfoWindow({
-                    content: "<h3>" + marker.name + "</h3>" + "</br>" + "<a href='/'>Homepage link</a>" + "</br>" + "<"
-                });
-                infoWindow.open(map, googleMarker);
-            });
-            //resize map
-
-        });
-        google.maps.event.addDomListener(window, "resize", function() {
-            var center = map.getCenter();
-            google.maps.event.trigger(map, "resize");
-            map.setCenter(center);
-        });
-        };
+        }
+    };
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0cN_4dkCiDcup9Cc6YXIPyANXs9zPic&callback=initMap">

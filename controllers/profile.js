@@ -20,8 +20,8 @@ index(req, res) {
   update(req, res){
     models.User.update({
       firstName: req.body.first_name,
-      // lastName: req.body.last_name,
-      // email: req.body.email
+      lastName: req.body.last_name,
+      email: req.body.email
     }, {
       where: {
         username: req.user.username

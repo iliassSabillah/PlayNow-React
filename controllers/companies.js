@@ -46,9 +46,10 @@ module.exports = {
       companyName: req.body.companyName.toLowerCase(),
       companyWebsite: req.body.companyWebsite,
       companyPhone: req.body.companyPhone,
+        address: req.body.address,
       state: req.body.state,
       city: req.body.city,
-      zipcode: req.body.zipcode,
+      zipcode: req.body.zipcode
     }).then((company) => {
       res.redirect(`/companies/${company.username}/${company.companyName}`);
     }).catch(() => {
@@ -81,6 +82,7 @@ module.exports = {
       slug: getSlug(req.body.companyName.toLowerCase()),
       companyWebsite: req.body.companyWebsite,
       companyPhone: req.body.companyPhone,
+        address: req.body.address,
       state: req.body.state,
       city: req.body.city,
       zipcode: req.body.zipcode,

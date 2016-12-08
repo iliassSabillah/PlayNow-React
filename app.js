@@ -24,7 +24,7 @@ app.use(express.static('./public'));
 // views engine
 app.engine('handlebars', exphbs({
   layoutsDir: './views/layouts',
-  defaultLayout: 'main',
+  defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views/`);

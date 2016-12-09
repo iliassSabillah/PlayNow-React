@@ -42,7 +42,6 @@ module.exports = (sequelize) => {
         notEmpty: true
       }
     },
-
      sportspref: {
      type: Sequelize.STRING,
      allowNull: true,

@@ -2,71 +2,45 @@
     //Marker database table json
     var addMarkers = {{{result}}}
 </script>
-<style>
-    .map_container{
-        width:100%;
-        margin: 0 auto;
-    }
-    #map {
-        height: 400px;
-        overflow: hidden;
-        position: relative;
-    }
-    #map_container{
-        position: relative;
-    }
-</style>
-
-    <div id="content" class="col s12">
-      {{#if cur_user}}
-              <div class="map_container">
-                <div id="map_container">
-                    <div id="map" class="col s12"></div>
+<div id="content" class="col s12">
+    {{#if cur_user}}
+        <div id="map" class="col s12"></div>
+        <!-- Modal for adding new marker -->
+        <div data-remodal-id="modal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <h1>Add new activity</h1>
+            <form>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <input id="inputName" type="text" class="validate" name="inputName">
+                        <label for="inputName">Name of activity</label>
+                    </div>
                 </div>
-              </div>
-
-            <div class="container">
-            <div class="row">
-              <div class="col m6 offset-m3 s12" style="overflow-y:scroll; height: 300px">
-                  <ul class="collection">
-                      {{#each marker}}
-                          <li class="collection-item avatar">
-                              <img src="" alt="" class="circle">
-                              <span class="title">{{name}}</span>
-                              <p>{{lat}} <br> {{lng}}
-                              </p>
-                              <a href="" class="secondary-content"><i class="material-icons">grade</i></a>
-                          </li>
-                      {{/each}}
-                  </ul>
-              </div>
-            </div>
-          <div class="row">
-            <h2> Add marker to database: </h2>
-            <form name="markers" action="/markers" method="post">
-                <div class="input-field">
-                    <label for="inputName">Name</label>
-                    <input type="text" id="inputName" name="inputName">
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <input id="inputSport" type="text" class="validate" name="inputSport">
+                        <label for="inputSport">Sport</label>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <label for="inputLatitude">Latitude</label>
-                    <input type="text" id="inputLatitude" name="inputLatitude">
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <input id="inputParticipants" type="number" name="inputParticipants">
+                        <label for="inputParticipants">Participants</label>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <label for="inputLongitude">Longitude</label>
-                    <input type="text" id="inputLongitude" name="inputLongitude">
-                </div>
-                <button type="submit" onClick="testing()" class="btn btn-primary">Add Marker</button>
             </form>
-          </div>
+            <br>
+            <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+            <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
         </div>
-      </div>
+</div>
 {{else}}
     <!--homepage html before login-->
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
+                <h1 class="header center teal-text text-lighten-2">Welcome</h1>
                 <div class="row center">
                     <h5 class="header col s12">Playnow. Enjoy your favorite sport. Meet new friends</h5>
                 </div>
@@ -92,9 +66,8 @@
                         <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
                         <h5 class="center">Lorem Ipsum is simply</h5>
 
-                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                         </p>
                     </div>
                 </div>
@@ -104,10 +77,8 @@
                         <h2 class="center brown-text"><i class="material-icons">group</i></h2>
                         <h5 class="center">Lorem ipsum dolor</h5>
 
-                        <p class="light">Lorem ipsum dolor sit amet, vix graece libris theophrastus ex. Brute semper an vim, aperiam aliquando ea sea.
-                            Adhuc apeirian adipiscing id vel.
-                            At labores elaboraret intellegebat qui. Mea hinc choro utroque eu.
-                            Vim enim putent ea, verterem oportere patrioque ius ea.</p>
+                        <p class="light">Lorem ipsum dolor sit amet, vix graece libris theophrastus ex. Brute semper an vim, aperiam aliquando ea sea. Adhuc apeirian adipiscing id vel. At labores elaboraret intellegebat qui. Mea hinc choro utroque eu. Vim enim putent
+                            ea, verterem oportere patrioque ius ea.</p>
                     </div>
                 </div>
 
@@ -116,9 +87,8 @@
                         <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
                         <h5 class="center">Easy to work with</h5>
 
-                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <p class="light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                     </div>
                 </div>
             </div>
@@ -135,9 +105,7 @@
                 </div>
             </div>
         </div>
-        <div class="parallax"><img
-                src="https://secure.static.tumblr.com/b053d3e85382f6c428370cc6aaa6729a/q48is5n/ybJn1wncb/tumblr_static_cricket_sports_1.jpg"
-                alt="Unsplashed background img 2"></div>
+        <div class="parallax"><img src="https://secure.static.tumblr.com/b053d3e85382f6c428370cc6aaa6729a/q48is5n/ybJn1wncb/tumblr_static_cricket_sports_1.jpg" alt="Unsplashed background img 2"></div>
     </div>
 
     <div class="container">
@@ -147,14 +115,10 @@
                 <div class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
                     <h4>Contact Us</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                        scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
-                        fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
-                        ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam
-                        eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi
-                        massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non
-                        tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-                        Curae;</p>
+                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien
+                        id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed
+                        ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                    </p>
                 </div>
             </div>
 
@@ -174,53 +138,11 @@
         </div>
     </div>
 
-{{/if}}
-</div>
-</div>
-</div>
-<!-- Google Map implementation -->
-<script>
-    var initMap = function () {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-                lat: 40.6,
-                lng: -74
-            },
-            zoom: 10
-        });
-        // if brower support available, ask user for location data and set the map view
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                map.setCenter(initialLocation);
-            });
-        }
-        // for each marker passed through, add it to the map with a popup
-        addMarkers.forEach(function (marker) {
-            console.log(marker.lat);
-            var position = new google.maps.LatLng(marker.lat, marker.lng);
-            var googleMarker = new google.maps.Marker({
-                position: position,
-                title: marker.name,
-                map: map
-            });
-            // Bind a popup to the marker
-            googleMarker.addListener("click", function () {
-                var infoWindow = new google.maps.InfoWindow({
-                    content: "<h3>" + marker.name + "</h3>" + "</br>" + "<a href='/'>Homepage link</a>" + "</br>" + "<"
-                });
-                infoWindow.open(map, googleMarker);
-            });
-            //resize map
-
-        });
-        google.maps.event.addDomListener(window, "resize", function() {
-            var center = map.getCenter();
-            google.maps.event.trigger(map, "resize");
-            map.setCenter(center);
-        });
-        };
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0cN_4dkCiDcup9Cc6YXIPyANXs9zPic&callback=initMap">
-</script>
+    {{/if}}
+    </div>
+    </div>
+    </div>
+    <!-- Google Map implementation -->
+    <script src="/js/googlemaps.js">
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0cN_4dkCiDcup9Cc6YXIPyANXs9zPic&callback=initMap"></script>

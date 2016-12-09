@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
       validate: {
         notEmpty: true,
         isEmail: true,
-      },
+      }
     },
     username: {
       type: Sequelize.STRING,
@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
       validate: {
         notEmpty: true,
         isAlphanumeric: true,
-      },
+      }
     },
     slug: {
       type: Sequelize.STRING,
@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       allowNull: false,
       validate: {
         notEmpty: true,
-      },
+      }
     },
     companyName: {
       type: Sequelize.STRING,
@@ -33,44 +33,51 @@ module.exports = (sequelize) => {
       allowNull: false,
       validate: {
         notEmpty: true,
-      },
+      }
     },
     companyWebsite: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
-        isUrl: true,
-      },
+        isUrl: true
+      }
     },
     companyPhone: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
+        notEmpty: true
+      }
     },
+      address:{
+          type: Sequelize.STRING,
+          allowNull: false,
+          validate:{
+          notEmpty: true
+          }
+      },
     state: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
+        notEmpty: true
+      }
     },
     city: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
+        notEmpty: true
+      }
     },
     zipcode: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true,
-      },
-    },
+        notEmpty: true
+      }
+    }
   });
 
   

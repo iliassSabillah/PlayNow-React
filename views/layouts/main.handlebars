@@ -76,7 +76,6 @@
                 <li><a href="/sports" class="white-text text-white">Find team</a></li>
                 {{#if cur_user}}
                 <li><a href="/companies">Company</a></li>
-                <li><a href="/">{{cur_user.username}}</a></li>
                 <li><a href="/profile">{{cur_user.username}}</a></li>
                 <li><a href="#" class="logout" class="white-text text-white">Logout</a></li>
                {{else}}
@@ -95,38 +94,41 @@
      <footer class="page-footer grey darken-2" id="targetFooter">
               <div class="container">
                   <div class="row">
-                  <div class="col l6 s12">
-                    <h5 class="amber-text text-darken-1">Footer Content</h5>
-                    <p class="amber-text text-darken-1">You can use rows and columns here to organize your footer content.</p>
-                  </div>
-                  <div class="col l4 offset-l2 s12">
-                    <h5 class="amber-text text-darken-1">Links</h5>
-                    <ul>
-                      <li><a class="amber-text text-darken-1" href="/about">About us</a></li>
-                    </ul>
-                  </div>
-                    <div class="col s12 offset-s2">
-                        <div class ="row">
-                            <div class="col s4">
-                                <i class="small material-icons">email</i>
-                            </div>
-                            <div class="col s4">
-                                <i class="small material-icons">info</i>
-                            </div>
-                            <div class="col s4">
-                                <i class="small material-icons">comment</i>
-                            </div>
-                        </div>
-                     </div>
-                    </div>
-                </div>
-              </div>
+                      <div class="col s12 offset-s2">
 
-  <div style="background-color: #757575; margin-left:-20px; margin-right: -20px; margin-bottom:-30px;">
-              <p class="center-align"> © PlayNow 2016  </p>        
-              </div>
-            </footer>
+                          <div class ="row">
+                              <div class="col s4">
+                                  <i class="small material-icons">email</i>
+                              </div>
+                              <div class="col s4">
+                                  <i class="small material-icons">info</i>
+                              </div>
+                              <div class="col s4">
+                                  <i class="small material-icons">comment</i>
+                              </div>
 
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class ="row" style="margin-top:-20px;">
+                      <div class="col s12 push-s2" style="margin-left:-20px;">
+                          <div class="col s4">
+                              <a id="footer-text" href="#!">Email us</a>
+                          </div>
+                          <div class="col s4">
+                              <a id="footer-text" href="/about">About us</a>
+                          </div>
+                          <div class="col s4">
+                              <a id="footer-text" href="#!">Leave a comment</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+         <div style="background-color: #757575; margin-left:-20px; margin-right: -20px; margin-bottom:-30px;">
+             <p class="center-align"> © PlayNow 2016  </p>
+         </div>
+     </footer>
       <script>
       (function ($) {
           $(function () {

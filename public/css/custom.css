@@ -1,9 +1,9 @@
+
 html, body {
     padding-right: none;
     padding-left: none;
     overflow-x: hidden;
 }
-
 
   body {
     display: flex;
@@ -34,6 +34,12 @@ html, body {
   font-size: 24px;
  }
 
+ #footer-text{
+  font-family: 'Anonymous Pro', monospace;
+  color: #fbc02d;
+  font-size: 16px;
+ }
+
  .white-text {
   font-family: 'Ubuntu';
   font-size: 20px;
@@ -52,51 +58,19 @@ font-family: 'Chewy', cursive;
 font-size: 30px;
    }
 
-/* label focus color */
-.input-field input[type=text]:focus + label {
- color: blue;
-}
-
-.input-field input[type=password]:focus + label {
- color: #fe8e60;
-}
-
-.input-field input[type=email]:focus + label {
- color: #fe8e60;
-}
-
-/* label underline focus color */
-.input-field input[type=text]:focus {
- border-bottom: 1px solid #000;
- box-shadow: 0 1px 0 0 #000;
-}
-
-/* label underline focus color */
-.input-field input[type=password]:focus {
- border-bottom: 1px solid #000;
- box-shadow: 0 1px 0 0 #000;
-}
-
-/* label underline focus color */
-.input-field input[type=email]:focus {
- border-bottom: 1px solid #000;
- box-shadow: 0 1px 0 0 #000;
-}
-
-
    /* valid color */
    .input-field input[type=text].valid {
-     border-bottom: 1px solid orange;
-     box-shadow: 0 1px 0 0 blue;
+     border-bottom: 1px solid #8bc34a;
+     box-shadow: 0 1px 0 0 #8bc34a;
    }
    /* invalid color */
    .input-field input[type=text].invalid {
-     border-bottom: 1px solid pink;
-     box-shadow: 0 1px 0 0 yellow;
+     border-bottom: 1px solid red;
+     box-shadow: 0 1px 0 0 red;
    }
    /* icon prefix focus color */
    .input-field .prefix.active {
-     color: purple;
+     color: #8bc34a;
    }
 
   /* Custom Stylesheet */
@@ -303,3 +277,9 @@ font-size: 30px;
     padding-top: 10px;
   }
   */
+
+/* >> Google Maps << */
+
+#map {
+    height: 500px;
+}

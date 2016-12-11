@@ -5,7 +5,7 @@ var models = require('../models');
 module.exports = {
  registerRouter() {
    var router = express.Router();
-   router.get('/', this.index);
+   router.get('/', Redirect.ifNotLoggedIn('/login'), this.index);
    router.post('/', this.submit);
    return router;
  },
@@ -20,7 +20,7 @@ module.exports = {
         username: req.user.username
       }
   }).then(() => {
-        res.redirect('/sports')
+        res.redirect('/profile')
     }).catch((err) => {
        console.log(err);
     });

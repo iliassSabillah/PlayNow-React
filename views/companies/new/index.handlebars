@@ -1,40 +1,21 @@
-<header class="intro-header" style="background-image: url('/img/contact-bg.jpg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>Create A New Company</h1>
-          <hr class="small">
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+<br/>
+ <div class="row valign-wrapper">
+  <form name="create-post" class="col s8" action="/companies" method="post">
+       <p id = "formHeading"> Create A New Company </p>
+        <br/>
 
-<div class="container">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <form name="create-post" action="/companies" method="post">
-        <div class="row control-group">
-          <div class="form-group col-xs-12 floating-label-form-group controls">
-            <label>CompanyName</label>
-            <input type="text" class="form-control" placeholder="companyName" name="companyName" required data-validation-required-message="Please enter a company name.">
-            <p class="help-block text-danger"></p>
-          </div>
+    <div class="input-field col s6">
+    <input id="companyName" type="text" class="validate" name="companyName">
+          <label for="companyName">Company Name</label>
+            </div>
         </div>
-        <div class="row control-group">
-          <div class="form-group col-xs-12 floating-label-form-group controls">
-            <label>Company Website</label>
-            <input type="text" class="form-control" placeholder="company website" name="companyWebsite" required data-validation-required-message="Please enter a body.">
-            <p class="help-block text-danger"></p>
-          </div>
-        </div>
-        <div class="row control-group">
-          <div class="form-group col-xs-12 floating-label-form-group controls">
-            <label>Company Phone</label>
-            <input type="text" class="form-control" placeholder="company phone" name="companyPhone" required data-validation-required-message="Please enter company Phone.">
-            <p class="help-block text-danger"></p>
-          </div>
+
+        <div class="row">
+         <div class="input-field col s6">
+            <input id="companyWebsite" type="text" class="validate" name="companyWebsite">
+               <label for="companyWebsite">Website</label>
+            </div>
         </div>
           <div class="row control-group">
               <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -49,28 +30,29 @@
             <input type="text" class="form-control" placeholder="state" name="state" required data-validation-required-message="Please enter a state.">
             <p class="help-block text-danger"></p>
           </div>
+           <div class="row">
+             <div class="input-field col s6">
+            <input id="companyPhone" type="number" class="validate" name="companyPhone">
+               <label for="companyPhone">Phone number</label>
+            </div>
         </div>
-        <div class="row control-group">
-          <div class="form-group col-xs-12 floating-label-form-group controls">
-            <label>City</label>
-            <input type="text" class="form-control" placeholder="City" name="city" required data-validation-required-message="Please enter a City.">
-            <p class="help-block text-danger"></p>
-          </div>
+            <div class="row">
+                 <div class="input-field col s6">
+                    <input id="City" type="text" class="validate" name="City">
+                    <label for="City">City</label>
+                </div>
+            </div>
+
+                   <div class="row">
+             <div class="input-field col s6">
+            <input id="Zipcode" type="number" class="validate" name="Zipcode">
+               <label for="Zipcode">Zipcode</label>
+            </div>
         </div>
-        <div class="row control-group">
-          <div class="form-group col-xs-12 floating-label-form-group controls">
-            <label>Zipcode</label>
-            <input type="text" class="form-control" placeholder="zipcode" name="zipcode" required data-validation-required-message="Please enter a zipcode.">
-            <p class="help-block text-danger"></p>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="form-group col-xs-12">
-              <button type="submit" class="btn btn-default">Send</button>
-          </div>
-        </div>
+
+           <br/>
+        <button class="btn #8bc34a light-green white-text text-white" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
       </form>
-    </div>
-  </div>
-</div>
+      </div>

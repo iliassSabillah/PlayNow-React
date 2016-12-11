@@ -1,46 +1,51 @@
 <br/>
 
 <style>
-.clicked {
-  background-color: yellow;
-}
+    .clicked {
+        background-color: yellow;
+    }
 </style>
 
-    <div class = "container">
-            <!-- Choose sport -->
-        <form class="col s12" name="sports" action="/sports" method="post">
-                <p class = "orange-text text-darken-2 center-align"> Choose Sport  </p>
-      <div class="chip" id = "1">Tennis</div>
-      <div class="chip" id = "2">Cricket</div>
-      <div class="chip" id = "3">Basketball</div>
-      <div class="chip" id = "4">Hockey</div>
-      <div class="chip" id = "5">Volleyball</div>
-      <div class="chip" id = "6">Ping Pong</div>
-      <div class="chip" id = "7">Dodge ball</div>
-      <div class="chip" id = "8">Softball</div>
-      <div class="chip" id = "9">Soccer</div>
-      <div class="chip" id = "10">Kickball</div>
-      <div class="chip" id = "11">Baseball</div>
-      <br/><br/>
-      <div class="center-align">
-        <button class="btn #8bc34a light-green white-text text-white" type="submit">Submit
+<div class="container">
+    <!-- Choose sport -->
+    <form class="col s12" name="sports" action="/sports" method="post">
+        <p id="formHeading" style="margin-left: 400px;"> Choose Sport </p>
+        <br/><br/>
+        <div class="chip" id="1">Tennis</div>
+        <div class="chip" id="2">Cricket</div>
+        <div class="chip" id="3">Basketball</div>
+        <div class="chip" id="4">Hockey</div>
+        <div class="chip" id="5">Volleyball</div>
+        <div class="chip" id="6">Ping Pong</div>
+        <div class="chip" id="7">Dodge ball</div>
+        <div class="chip" id="8">Softball</div>
+        <div class="chip" id="9">Soccer</div>
+        <div class="chip" id="10">Kickball</div>
+        <div class="chip" id="11">Baseball</div>
+
+        <br/><br/>
+        <br/>
+        <div class="center-align">
+            <button class="btn #8bc34a light-green white-text text-white" type="submit">Submit
           <i class="material-icons right">send</i>
         </button>
-      </div>
-      <input id = "selectedSport" name="selectedSport" style="text-align: center;"/>
-      </form>
-  </div>
+        </div>
+       <!-- <input id="selectedSport" name="selectedSport" style="text-align: center;" />-->
+    </form>
+</div>
 
 <script>
     var selectedChip;
 
     // change color of selected chips to yellow
     $(".chip").click(function() {
-      $(".chip").removeClass('clicked');
-      $(this).toggleClass('clicked');
+        $(".chip").removeClass('clicked');
+        $(this).toggleClass('clicked');
 
-      var selectedSport = $(this).text();
+        var selectedSport = $(this).text();
 
-      $.post('http://localhost:3000/sports', { sport: selectedSport });
+        $.post('http://localhost:3000/sports', {
+            sport: selectedSport
+        });
     });
 </script>

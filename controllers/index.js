@@ -21,4 +21,16 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/', (req, res) => {
+  models.Markers.create({
+    name: req.body.name,
+    sport: req.body.sport,
+    participants: req.body.participants,
+    lat: req.body.lat,
+    lng: req.body.lng
+  }).then((marker) => {
+    res.json(marker);
+  });
+});
+
 module.exports = router;

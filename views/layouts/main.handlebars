@@ -55,6 +55,8 @@
                   </div>
                 </li>
                 {{#if cur_user}}
+                    <li><a href="/about"><i class="material-icons">cloud</i>About</a></li>
+                    <li><div class="divider"></div></li>
                   <li><a href="/sports"><i class="material-icons">search</i>Find Team</a></li>
                   <li><div class="divider"></div></li>
                   <li><a href="/companies"><i class="material-icons">cloud</i>Companies</a></li>
@@ -70,6 +72,7 @@
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/about">About</a></li>
                 <li><a href="/sports" class="white-text text-white">Find team</a></li>
                 {{#if cur_user}}
                 <li><a href="/companies">Company</a></li>
@@ -90,45 +93,42 @@
     <!-- Footer -->
      <footer class="page-footer grey darken-2" id="targetFooter">
               <div class="container">
-                <div class="row">
-                  <div class="col s12 offset-s2">
-                   
-                      <div class ="row">
-                        <div class="col s4">
-                    <i class="small material-icons">email</i>
-                    </div>
-                    <div class="col s4">
-                     <i class="small material-icons">info</i>
+                  <div class="row">
+                      <div class="col s12 offset-s2">
+
+                          <div class ="row">
+                              <div class="col s4">
+                                  <i class="small material-icons">email</i>
+                              </div>
+                              <div class="col s4">
+                                  <i class="small material-icons">info</i>
+                              </div>
+                              <div class="col s4">
+                                  <i class="small material-icons">comment</i>
+                              </div>
+
+                          </div>
                       </div>
-                      <div class="col s4">
-                     <i class="small material-icons">comment</i>
-                    </div>
+                  </div>
 
-                     </div>
-                     </div>
-                    </div>
-          
-                       <div class ="row" style="margin-top:-20px;">
-                          <div class="col s12 push-s2" style="margin-left:-20px;">
-                            <div class="col s4">
-                          <a id="footer-text" href="#!">Email us</a>
-                        </div>
+                  <div class ="row" style="margin-top:-20px;">
+                      <div class="col s12 push-s2" style="margin-left:-20px;">
                           <div class="col s4">
-                          <a id="footer-text" href="#!">About us</a>
-                        </div>
+                              <a id="footer-text" href="#!">Email us</a>
+                          </div>
                           <div class="col s4">
-                          <a id="footer-text" href="#!">Leave a comment</a>
-                        </div>
-                        </div>
-                     </div>
-                </div>
+                              <a id="footer-text" href="/about">About us</a>
+                          </div>
+                          <div class="col s4">
+                              <a id="footer-text" href="#!">Leave a comment</a>
+                          </div>
+                      </div>
+                  </div>
               </div>
-
-  <div style="background-color: #757575; margin-left:-20px; margin-right: -20px; margin-bottom:-30px;">
-              <p class="center-align"> © PlayNow 2016  </p>        
-              </div>
-            </footer>
-
+         <div style="background-color: #757575; margin-left:-20px; margin-right: -20px; margin-bottom:-30px;">
+             <p class="center-align"> © PlayNow 2016  </p>
+         </div>
+     </footer>
       <script>
       (function ($) {
           $(function () {

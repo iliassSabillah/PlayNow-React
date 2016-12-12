@@ -50,6 +50,8 @@ module.exports = {
       city: req.body.city,
       zipcode: req.body.zipcode
     }).then((company) => {
+      console.log('body:',req.body)
+      console.log('company',company)
       res.redirect(`/companies/${company.username}/${company.companyName}`);
     }).catch(() => {
       res.render('companies/new');
@@ -84,7 +86,7 @@ module.exports = {
         address: req.body.address,
       state: req.body.state,
       city: req.body.city,
-      zipcode: req.body.zipcode,
+      zipcode: req.body.zipcode
     }, {
       where: {
         username: req.params.username,

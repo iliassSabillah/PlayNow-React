@@ -11,6 +11,7 @@
     <form class="col s12" name="sports" action="/sports" method="post">
         <p id="formHeading" style="margin-left: 400px;"> Choose Sport </p>
         <br/><br/>
+
         <div class="chip" id="1">Tennis</div>
         <div class="chip" id="2">Cricket</div>
         <div class="chip" id="3">Basketball</div>
@@ -22,6 +23,7 @@
         <div class="chip" id="9">Soccer</div>
         <div class="chip" id="10">Kickball</div>
         <div class="chip" id="11">Baseball</div>
+        <div class="chip" id="12">Swimming</div>
 
         <br/><br/>
         <br/>
@@ -36,6 +38,13 @@
 
 <script>
     var selectedChip;
+    $('.chip').each(function(index,item){
+      if( $(item).html().trim() == '{{sport}}'){
+        selectedChip == '{{sport}}';
+        $(this).toggleClass('clicked');
+      }
+    });
+    console.log(selectedChip);
 
     // change color of selected chips to yellow
     $(".chip").click(function() {

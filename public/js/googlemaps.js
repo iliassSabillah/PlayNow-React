@@ -13,7 +13,7 @@ var addAnotherMarker = function (marker) {
   // Bind a popup to the marker
   googleMarker.addListener("click", function () {
       var infoWindow = new google.maps.InfoWindow({
-          content: "<h3>" + marker.name + "</h3>" + "</br>" + marker.sport + "</br>" + "Participants: " + "x/" + marker.participants + "</br>" + "<a class=\"waves-effect waves-light btn\">Join</a>" + "</br>"
+          content: "<h3>" + marker.name + "</h3>" + marker.sport + "</br>" + "Participants: " + marker.participants + "</br>" + "<a class=\"waves-effect waves-light btn\">Join</a>" + "</br>"
       });
       infoWindow.open(map, googleMarker);
   });

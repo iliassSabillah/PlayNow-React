@@ -10,7 +10,17 @@ module.exports = {
    return router;
  },
  index(req, res) {
-   res.render('sports', { error: req.flash('error') });
+   if (req.user.username){
+     models.User.findOne({
+       where : {username: req.user.username}
+     }).then((user) =>{
+       var sport = user.sportspref;
+       res.render('sports', { sport });
+     });
+   }
+   else {
+     res.render('sports');
+   }
  },
    submit(req, res) {
     models.User.update({

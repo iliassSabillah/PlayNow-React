@@ -141,9 +141,9 @@ font-size: 30px;
   }
   /*about page column gap styling*/
 
-.circle .responsive-img {
-    width: 10px !important;
-    height:10px !important;
+.responsive-img {
+    width: 50px !important;
+    height:50px !important;
 }
 
 /*.footer {*/

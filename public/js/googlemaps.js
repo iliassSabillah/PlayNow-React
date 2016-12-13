@@ -67,7 +67,7 @@ var initMap = function () {
             }
           ).done(function (marker) {
             addAnotherMarker(marker);
-          });f\
+          });
 
           placeMarker(newMarker);
           $('#inputName').val('');

@@ -14,13 +14,20 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <p><a href="+{{company.companyWebsite}}+">{{company.companyWebsite}}</a></p>
-      <p>{{company.companyPhone}}</p>
-        <p>{{company.address}}</p>
-      <p>{{company.state}}</p>
-      <p>{{company.city}}</p>
-      <p>{{company.zipcode}}</p>
-    </div>
+        <div class="col-md-6">
+          <p><a href="+{{company.companyWebsite}}+">{{company.companyWebsite}}</a></p>
+          <p>{{company.companyPhone}}</p>
+            <p>{{company.address}}</p>
+          <p>{{company.state}}</p>
+          <p>{{company.city}}</p>
+          <p>{{company.zipcode}}</p>
+        </div>
+          <div class="col-md-6">
+              <iframe
+                      id="companyMap"
+                      frameborder="0" style="border:2px"
+                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBR3YnmH_sCLgjpiBnGsIb8YALCQvMbhRQ&q='+{{company.address}}+'" allowfullscreen>
+              </iframe>
+          </div>
   </div>
 </div>

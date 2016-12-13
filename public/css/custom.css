@@ -141,7 +141,10 @@ font-size: 30px;
   }
   /*about page column gap styling*/
 
-
+.circle .responsive-img {
+    width: 10px !important;
+    height:10px !important;
+}
 
 /*.footer {*/
     /*position: absolute;*/
@@ -282,4 +285,8 @@ font-size: 30px;
 
 #map {
     height: 500px;
+}
+#companyMap {
+    width:300px;
+    height: 200px;
 }
